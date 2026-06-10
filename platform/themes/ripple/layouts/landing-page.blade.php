@@ -19,16 +19,12 @@
     {!! Theme::partial('landing.section1') !!}
 
     <!-- SECTION 2: VIDEO TEASER -->
-    <!-- {!! Theme::partial('landing.section2') !!} -->
 
     <!-- SECTION 3: 3 ĐIỂM NỔI BẬT -->
-    <!-- {!! Theme::partial('landing.section3') !!} -->
 
     <!-- SECTION 4: FORM THU LEAD -->
-    <!-- {!! Theme::partial('landing.section4') !!} -->
 
     <!-- SECTION 5: FOOTER -->
-    <!-- {!! Theme::partial('landing.section5') !!} -->
 </div>
     <script src="{{ $ldpJsUrl }}"></script>
 </body>
