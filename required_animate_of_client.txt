@@ -1,0 +1,9 @@
+*section 3 
+Chỗ 3 ảnh. Sẽ có hiệu ứng dạng zoom in hình (cho động đậy/lật hình,...) 
+Anh xem giúp em action nào phù hợp, thì anh đề xuất giúp nhé
+
+*Tổng thể dự án 
+ok đẩy codde sớm với cần code tinh tế, mượt mà, nhẹ nhàng cho các devices nha @Chế Thanh Kiên
+các nút code đưungf có hiệu ứng thô quá, chuyển mượt, các thao tác rê chuột lướt, hiệu ứng cần có yếu tố tinh tế
+đừng có hiện ra thô kệch nha, với hiueej ứng xuất hiện, biên mất đường đột cho chữ, hình, và có thứ tự lần lượt rõ ràng nha
+KH này kĩ mấy cái đó lắm đó, với font size, bố cục phải tinh tế, với thiết bị mobile cũng đặc biệt quan trọng, coi hình ảnh resize cho mobile version

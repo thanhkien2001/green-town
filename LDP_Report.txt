@@ -1,0 +1,57 @@
+Package Report
+
+-----------------------------------------------------------------------------
+Document:
+Name: LDP.ai
+Color Mode: RGB color
+Color Profile: sRGB IEC61966-2.1
+Ruler Units: pixels
+Artboard Dimensions: 1920 px x 508,2553 px
+Show Images in Outline Mode: OFF
+Highlight Substituted Fonts: OFF
+Highlight Substituted Glyphs: OFF
+Preserve Text Editability
+Simulate Colored Paper: OFF
+
+-----------------------------------------------------------------------------
+Spot Color Objects:
+
+-----------------------------------------------------------------------------
+Missing Fonts:NONE
+
+-----------------------------------------------------------------------------
+Protected Fonts that were not packaged:NONE
+
+-----------------------------------------------------------------------------
+Fonts:
+VN-Kia Signature-Light (OTF)
+VN-KiaSignature-Regular (OTF)
+VN-KiaSignature-Bold (OTF)
+
+-----------------------------------------------------------------------------
+Embedded Fonts:
+NONE
+
+-----------------------------------------------------------------------------
+Missing Links:
+NONE
+
+-----------------------------------------------------------------------------
+Linked Images:
+
+F:\ \LV'ODINE\KIA\2_LDP\Teaser_IMG_side.jpg
+Type: RGB
+Bits per Pixel: 24
+Channels: 3
+Size: 24300K, 3840 by 2160 pixels
+Dimensions: 490,332 by 275,812 points 
+Resolution: 563,863 by 563,863 pixels per inch
+
+
+F:\ \LV'ODINE\KIA\2_LDP\Teaser_IMG_front.jpg
+Type: RGB
+Bits per Pixel: 24
+Channels: 3
+Size: 24300K, 3840 by 2160 pixels
+Dimensions: 486,213 by 273,495 points 
+Resolution: 568,64 by 568,64 pixels per inch

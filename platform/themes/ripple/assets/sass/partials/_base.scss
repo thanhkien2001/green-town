@@ -1,0 +1,133 @@
+/* ============================================================
+   KIA Landing Page — SCSS
+   Font: KiaSignature (Light 300 / Regular 400 / Bold 700)
+   ============================================================ */
+
+// ── Font Face ─────────────────────────────────────────────────────────────────
+@font-face {
+    font-family: 'KiaSignature';
+    src: url('../fonts/VN-KiaSignature-Light.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'KiaSignature';
+    src: url('../fonts/VN-KiaSignature-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'KiaSignature';
+    src: url('../fonts/VN-KiaSignature-Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+// ── Font Utility Classes ───────────────────────────────────────────────────────
+.font-kia-light {
+    font-family: 'KiaSignature', sans-serif;
+    font-weight: 300;
+}
+
+.font-kia-regular {
+    font-family: 'KiaSignature', sans-serif;
+    font-weight: 400;
+}
+
+.font-kia-bold {
+    font-family: 'KiaSignature', sans-serif;
+    font-weight: 700;
+}
+
+// ── Variables ──────────────────────────────────────────────────────────────────
+$font-kia: 'KiaSignature', sans-serif;
+$color-white: #ffffff;
+$color-muted: rgba(255, 255, 255, 0.65);
+$ease-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+// ── Base Reset ─────────────────────────────────────────────────────────────────
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.landing-page-wrapper {
+    font-family: $font-kia;
+    color: $color-white;
+    background-color: #05060f;
+    overflow-x: hidden;
+
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+}
+
+// ── Scroll Reveal (js-reveal) ──────────────────────────────────────────────────
+.js-reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 1.2s $ease-smooth, transform 1.2s $ease-smooth;
+
+    &.is-revealed {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// ── Button KIA CTA ─────────────────────────────────────────────────────────────
+.btn-kia-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: clamp(12px, 2vw, 16px) clamp(32px, 5vw, 60px);
+    font-family: $font-kia;
+    font-weight: 600;
+    font-size: clamp(16px, 2vw, 20px);
+    color: #0e0d12;
+    background: linear-gradient(180deg, #ffffff 0%, #e0e0e0 100%);
+    border: none;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.35s $ease-smooth;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.15);
+
+    .btn-arrow {
+        font-size: 22px;
+        transition: transform 0.3s $ease-smooth;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+        transform: translateX(-110%);
+        transition: transform 0.55s $ease-smooth;
+    }
+
+    &:hover {
+        background: linear-gradient(180deg, #ffffff 0%, #ffffff 100%);
+        box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+        transform: translateY(-2px);
+
+        .btn-arrow {
+            transform: translateX(4px);
+        }
+
+        &::after {
+            transform: translateX(110%);
+        }
+    }
+}
