@@ -25,7 +25,29 @@
     <!-- SECTION 4: FORM THU LEAD -->
 
     <!-- SECTION 5: FOOTER -->
+<!-- Debug size -->
+<div id="screen-size-debug" style="position: fixed; bottom: 10px; right: 10px; background: rgba(0,0,0,0.7); color: #fff; padding: 4px 8px; font-family: monospace; font-size: 11px; z-index: 999999; pointer-events: none; border-radius: 3px;">
+    <span id="debug-w">0</span>
 </div>
+<script>
+    (function() {
+        function u() {
+            var w = window.innerWidth;
+            var h = window.innerHeight;
+            var b = 'xs';
+            if(w >= 1400) b = 'xxl';
+            else if(w >= 1200) b = 'xl';
+            else if(w >= 992) b = 'lg';
+            else if(w >= 768) b = 'md';
+            else if(w >= 576) b = 'sm';
+            document.getElementById('debug-w').textContent = w + ' x ' + h;
+        }
+        u();
+        window.addEventListener('resize', u);
+    })();
+</script>
+
     <script src="{{ $ldpJsUrl }}"></script>
 </body>
 </html>
+
