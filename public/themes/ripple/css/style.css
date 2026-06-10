@@ -78,10 +78,6 @@ section {
  * Add the correct display in IE 9-.
  */
 
-video {
-  display: inline-block;
-}
-
 /**
  * Add the correct display in iOS 4-7.
  */
@@ -185,9 +181,6 @@ img {
 /**
  * Hide the overflow in IE.
  */
-svg:not(:root) {
-  overflow: hidden;
-}
 
 /* Grouping content
    ========================================================================== */
