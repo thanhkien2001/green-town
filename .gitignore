@@ -23,5 +23,5 @@ yarn-error.log
 /public/fonts
 /public/mix-manifest.json
 
-platform/themes/ripple/public/*
-public/themes/ripple/*
+/platform/themes/ripple/public/
+/public/themes/ripple/
