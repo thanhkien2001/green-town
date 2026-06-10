@@ -100,6 +100,15 @@ theme_option()
         'subsection' => true,
         'icon'       => 'fa fa-home',
         'fields'     => [
+            [
+                'id'         => 'ldp_s1_bg',
+                'type'       => 'mediaImage',
+                'label'      => 'Ảnh nền Section 1 (Hero Banner)',
+                'attributes' => [
+                    'name'  => 'ldp_s1_bg',
+                    'value' => null,
+                ],
+            ],
         ],
     ]);
     
