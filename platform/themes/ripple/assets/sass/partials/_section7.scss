@@ -1,0 +1,98 @@
+/* ============================================================
+   Section 7: Floor Plan (Mặt bằng)
+   ============================================================ */
+
+.kia-section-7 {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 73px 0 100px;
+    background-color: #ffffff;
+
+    .s7-leaf-bg {
+        position: absolute;
+        left: -4%;
+        top: -8%;
+        width: 30%;
+        max-width: 350px;
+        min-width: 200px;
+        height: 60%;
+        background-image: url('../images/la_2.png');
+        background-size: contain;
+        background-position: left top;
+        background-repeat: no-repeat;
+        z-index: 999;
+        pointer-events: none;
+    }
+
+    .s7-content-wrapper {
+        width: 100%;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+    }
+
+    .s7-heading1 {
+        font-size: 54px;
+        color: #5EA345;
+        line-height: 1.2;
+        margin: 0px;
+    }
+
+    .s7-image-wrapper {
+        width: 100%;
+        padding: 0 15px; // Align with section 6 items (they use swiper with padding/margin)
+        position: relative;
+        z-index: 1;
+
+        .s7-floor-plan-img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+    }
+
+    // Responsive: Tablet
+    @media (min-width: 992px) and (max-width: 1400px) {
+        min-height: auto;
+        padding: 50px 0;
+
+        .s7-leaf-bg {
+            position: absolute;
+            left: -5%;
+            top: -17%;
+            width: 30%;
+            max-width: 250px;
+            min-width: 200px;
+            height: 60%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .s7-heading1 {
+            font-size: 40px;
+        }
+    }
+
+    // Responsive: Mobile
+    @media (max-width: 767px) {
+        padding: 40px 0;
+
+        .s7-heading1 {
+            font-size: 28px;
+        }
+
+        .s7-leaf-bg {
+            top: -8%;
+            width: 40%;
+            left: -10%;
+            max-width: 150px;
+            min-width: 100px;
+
+        }
+    }
+}

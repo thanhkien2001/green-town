@@ -30,6 +30,9 @@
     {{-- SECTION 6 --}}
     {!! Theme::partial('landing.section6') !!}
 
+    {{-- SECTION 7 --}}
+    {!! Theme::partial('landing.section7') !!}
+
     <!-- SECTION 2: VIDEO TEASER -->
 
     <!-- SECTION 3: 3 ĐIỂM NỔI BẬT -->
