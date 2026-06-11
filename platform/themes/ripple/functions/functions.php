@@ -325,152 +325,65 @@ theme_option()
         ],
     ]);
 
-    // // Section 4
-    // ->setSection([
-    //     'title'      => 'Landing Page: S4 Form',
-    //     'desc'       => 'Cấu hình Section 4 (Form)',
-    //     'priority'   => 13,
-    //     'id'         => 'opt-section-landing-s4',
-    //     'subsection' => true,
-    //     'icon'       => 'fa fa-wpforms',
-    //     'fields'     => [
-    //         [
-    //             'id'         => 'ldp_s4_bg',
-    //             'type'       => 'mediaImage',
-    //             'label'      => 'Background Desktop (Section 4)',
-    //             'attributes' => [
-    //                 'name'  => 'ldp_s4_bg',
-    //                 'value' => null,
-    //             ],
-    //         ],
-    //         [
-    //             'id'         => 'ldp_s4_bg_mb',
-    //             'type'       => 'mediaImage',
-    //             'label'      => 'Background Mobile (Section 4)',
-    //             'attributes' => [
-    //                 'name'  => 'ldp_s4_bg_mb',
-    //                 'value' => null,
-    //             ],
-    //         ],
-    //         [
-    //             'id'         => 'ldp_s4_subtitle',
-    //             'type'       => 'text',
-    //             'label'      => 'Dòng giới thiệu nhỏ (Subtitle)',
-    //             'attributes' => [
-    //                 'name'    => 'ldp_s4_subtitle',
-    //                 'value'   => null,
-    //                 'options' => [
-    //                     'class'       => 'form-control',
-    //                     'placeholder' => 'Đăng ký ngay hôm nay để bắt đầu hành trình khám phá',
-    //                 ],
-    //             ],
-    //         ],
-    //         [
-    //             'id'         => 'ldp_s4_title',
-    //             'type'       => 'text',
-    //             'label'      => 'Tiêu đề chính (Title)',
-    //             'attributes' => [
-    //                 'name'    => 'ldp_s4_title',
-    //                 'value'   => null,
-    //                 'options' => [
-    //                     'class'       => 'form-control',
-    //                     'placeholder' => 'Kỷ nguyên mới - Công nghệ mới',
-    //                 ],
-    //             ],
-    //         ],
-    //         [
-    //             'id'         => 'ldp_s4_btn_text',
-    //             'type'       => 'text',
-    //             'label'      => 'Chữ hiển thị trên Nút Đăng ký',
-    //             'attributes' => [
-    //                 'name'    => 'ldp_s4_btn_text',
-    //                 'value'   => null,
-    //                 'options' => [
-    //                     'class'       => 'form-control',
-    //                     'placeholder' => 'Đăng ký ngay',
-    //                 ],
-    //             ],
-    //         ],
-    //         [
-    //             'id'         => 'ldp_s4_link1_text',
-    //             'type'       => 'text',
-    //             'label'      => 'Footer Link 1: Text',
-    //             'attributes' => [
-    //                 'name'    => 'ldp_s4_link1_text',
-    //                 'value'   => null,
-    //                 'options' => [
-    //                     'class'       => 'form-control',
-    //                     'placeholder' => 'Đại lý gần nhất',
-    //                 ],
-    //             ],
-    //         ],
-    //         [
-    //             'id'         => 'ldp_s4_link1_url',
-    //             'type'       => 'text',
-    //             'label'      => 'Footer Link 1: URL',
-    //             'attributes' => [
-    //                 'name'    => 'ldp_s4_link1_url',
-    //                 'value'   => null,
-    //                 'options' => [
-    //                     'class'       => 'form-control',
-    //                     'placeholder' => '#dealer',
-    //                 ],
-    //             ],
-    //         ],
-    //         [
-    //             'id'         => 'ldp_s4_link2_text',
-    //             'type'       => 'text',
-    //             'label'      => 'Footer Link 2: Text',
-    //             'attributes' => [
-    //                 'name'    => 'ldp_s4_link2_text',
-    //                 'value'   => null,
-    //                 'options' => [
-    //                     'class'       => 'form-control',
-    //                     'placeholder' => 'Sản phẩm',
-    //                 ],
-    //             ],
-    //         ],
-    //         [
-    //             'id'         => 'ldp_s4_link2_url',
-    //             'type'       => 'text',
-    //             'label'      => 'Footer Link 2: URL',
-    //             'attributes' => [
-    //                 'name'    => 'ldp_s4_link2_url',
-    //                 'value'   => null,
-    //                 'options' => [
-    //                     'class'       => 'form-control',
-    //                     'placeholder' => '#products',
-    //                 ],
-    //             ],
-    //         ],
-    //         [
-    //             'id'         => 'ldp_s4_link3_text',
-    //             'type'       => 'text',
-    //             'label'      => 'Footer Link 3: Text',
-    //             'attributes' => [
-    //                 'name'    => 'ldp_s4_link3_text',
-    //                 'value'   => null,
-    //                 'options' => [
-    //                     'class'       => 'form-control',
-    //                     'placeholder' => 'Liên hệ',
-    //                 ],
-    //             ],
-    //         ],
-    //         [
-    //             'id'         => 'ldp_s4_link3_url',
-    //             'type'       => 'text',
-    //             'label'      => 'Footer Link 3: URL',
-    //             'attributes' => [
-    //                 'name'    => 'ldp_s4_link3_url',
-    //                 'value'   => null,
-    //                 'options' => [
-    //                     'class'       => 'form-control',
-    //                     'placeholder' => '#contact',
-    //                 ],
-    //             ],
-    //         ],
-    //     ],
-    // ])
+    // Section 4: Kết nối tiện ích
+    theme_option()->setSection([
+        'title'      => 'Landing Page: S4 Utilities',
+        'desc'       => 'Cấu hình Section 4 (Kết nối tiện ích)',
+        'priority'   => 13,
+        'id'         => 'opt-section-landing-s4',
+        'subsection' => true,
+        'icon'       => 'fa fa-map-signs',
+        'fields'     => [
+            [
+                'id'         => 'ldp_s4_map_img',
+                'type'       => 'mediaImage',
+                'label'      => 'Ảnh bản đồ bên trái (Desktop & Mobile)',
+                'attributes' => [
+                    'name'  => 'ldp_s4_map_img',
+                    'value' => null,
+                ],
+            ],
+            [
+                'id'         => 'ldp_s4_title',
+                'type'       => 'text',
+                'label'      => 'Tiêu đề lớn (Title)',
+                'attributes' => [
+                    'name'    => 'ldp_s4_title',
+                    'value'   => 'GREEN TOWN BÌNH TÂN',
+                    'options' => [
+                        'class'       => 'form-control',
+                        'placeholder' => 'GREEN TOWN BÌNH TÂN',
+                    ],
+                ],
+            ],
+            [
+                'id'         => 'ldp_s4_subtitle',
+                'type'       => 'text',
+                'label'      => 'Tiêu đề phụ (Subtitle)',
+                'attributes' => [
+                    'name'    => 'ldp_s4_subtitle',
+                    'value'   => 'ĐÔ THỊ 15 PHÚT PHÍA TÂY TP. HỒ CHÍ MINH',
+                    'options' => [
+                        'class'       => 'form-control',
+                        'placeholder' => 'ĐÔ THỊ 15 PHÚT PHÍA TÂY TP. HỒ CHÍ MINH',
+                    ],
+                ],
+            ],
+            [
+                'id'         => 'ldp_s4_items',
+                'type'       => 'textarea',
+                'label'      => 'Danh sách tiện ích (Mỗi dòng là một tiện ích)',
+                'attributes' => [
+                    'name'    => 'ldp_s4_items',
+                    'value'   => "Chỉ 300m tới trung tâm hành chính Bình Hưng Hoà\nChỉ 500m tới trường học các cấp: Trường mầm non - tiểu học Trí Tuệ Việt, Trường Tiểu học Ngô Quyền, Trường THPT Vĩnh Lộc, THCS Huỳnh Văn Nghệ...\nĐối diện công viên hồ trái tim.\nLiền kề trung tâm thể dục thể thao.\n5 phút tới trung tâm thương mại AEON Mall Tân Phú\n5 phút tới trung tâm thương mại Pandora City\n7 phút tới Bến xe An Sương\n10 phút tới Sân bay Tân Sơn Nhất\n10 phút tới KCN Vĩnh Lộc, KCN Tân Bình, KCN Tân Tạo\n10 phút tới Tòa nhà Etown Tower phường Tân Bình",
+                    'options' => [
+                        'class' => 'form-control',
+                        'rows'  => 12,
+                    ],
+                ],
+            ],
+        ],
+    ]);
 
     // Section 5
     theme_option()->setSection([

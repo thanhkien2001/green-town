@@ -1,183 +1,90 @@
-<!-- SECTION 4: FORM THU LEAD -->
 @php
-    // Đọc an toàn ảnh nền ngang cho desktop
-    $bgImageRaw = theme_option('ldp_s4_bg');
-    if (!empty($bgImageRaw)) {
-        // Nếu đã là URL đầy đủ hoặc đường dẫn tuyệt đối
-        if (filter_var($bgImageRaw, FILTER_VALIDATE_URL) || str_starts_with($bgImageRaw, '/') || str_contains($bgImageRaw, 'storage/')) {
-            $bgImage = $bgImageRaw;
+    // Đọc ảnh bản đồ bên trái từ Theme Options, fallback về ảnh trong assets
+    $mapRaw = theme_option('ldp_s4_map_img');
+    if (!empty($mapRaw) && $mapRaw != '0' && $mapRaw != 'null') {
+        if (filter_var($mapRaw, FILTER_VALIDATE_URL) || str_starts_with($mapRaw, '/') || str_contains($mapRaw, 'storage/')) {
+            $mapImg = $mapRaw;
         } else {
-            $bgImage = RvMedia::getImageUrl($bgImageRaw);
+            $mapImg = RvMedia::getImageUrl($mapRaw);
         }
     } else {
-        $bgImage = Theme::asset()->url('images/58ccb2e902e84249abf9f017170b1b87b5a2560c.png');
+        $mapImg = asset('themes/ripple/images/map-left-section4.webp');
     }
 
-    // Đọc an toàn ảnh nền cho mobile, ưu tiên ldp_s4_bg_mb, sau đó là ldp_s1_bg_mb, và cuối cùng fallback về ảnh desktop
-    $s4BgMb = theme_option('ldp_s4_bg_mb');
-    $s1BgMb = theme_option('ldp_s1_bg_mb');
+    // Làm sạch URL để tương thích ngrok/local IP
+    if (str_contains($mapImg, '/storage/')) {
+        $mapImg = strstr($mapImg, '/storage/');
+    } elseif (str_contains($mapImg, '/themes/')) {
+        $mapImg = strstr($mapImg, '/themes/');
+    }
 
-    if (!empty($s4BgMb)) {
-        if (filter_var($s4BgMb, FILTER_VALIDATE_URL) || str_starts_with($s4BgMb, '/') || str_contains($s4BgMb, 'storage/')) {
-            $bgMobile = $s4BgMb;
-        } else {
-            $bgMobile = RvMedia::getImageUrl($s4BgMb);
+    // Đọc text từ Theme Options
+    $s4Title = theme_option('ldp_s4_title') ?: 'GREEN TOWN BÌNH TÂN';
+    $s4Subtitle = theme_option('ldp_s4_subtitle') ?: 'ĐÔ THỊ 15 PHÚT PHÍA TÂY TP. HỒ CHÍ MINH';
+    
+    $s4ItemsRaw = theme_option('ldp_s4_items');
+    $s4Items = [];
+    if (!empty($s4ItemsRaw)) {
+        // Tách theo dòng
+        $lines = preg_split('/\r\n|\r|\n/', $s4ItemsRaw);
+        foreach ($lines as $line) {
+            $trimmed = trim($line);
+            if (!empty($trimmed)) {
+                $s4Items[] = $trimmed;
+            }
         }
-    } elseif (!empty($s1BgMb)) {
-        if (filter_var($s1BgMb, FILTER_VALIDATE_URL) || str_starts_with($s1BgMb, '/') || str_contains($s1BgMb, 'storage/')) {
-            $bgMobile = $s1BgMb;
-        } else {
-            $bgMobile = RvMedia::getImageUrl($s1BgMb);
-        }
-    } else {
-        $bgMobile = $bgImage;
     }
 
-    /* 
-       Kỹ thuật Ngrok / Local Network Path Cleansing:
-       Khi test bằng điện thoại thật qua ngrok hoặc IP nội bộ, nếu đường dẫn ảnh là URL tuyệt đối 
-       chứa domain ảo "http://kia-ldp.code/...", điện thoại thật sẽ bị lỗi ERR_NAME_NOT_RESOLVED 
-       do không thể phân giải được domain ảo này.
-       Bằng cách chuyển đổi URL tuyệt đối thành đường dẫn tương đối (/storage/...), 
-       cả máy tính local và điện thoại thật qua ngrok đều sẽ tự động tải tài nguyên từ 
-       domain tương ứng cực kỳ mượt mà và an toàn!
-    */
-    if (str_contains($bgImage, '/storage/')) {
-        $bgImage = strstr($bgImage, '/storage/');
-    } elseif (str_contains($bgImage, '/themes/')) {
-        $bgImage = strstr($bgImage, '/themes/');
+    // Mặc định nếu chưa nhập dữ liệu
+    if (empty($s4Items)) {
+        $s4Items = [
+            'Chỉ 300m tới trung tâm hành chính Bình Hưng Hoà',
+            'Chỉ 500m tới trường học các cấp: Trường mầm non - tiểu học Trí Tuệ Việt, Trường Tiểu học Ngô Quyền, Trường THPT Vĩnh Lộc, THCS Huỳnh Văn Nghệ...',
+            'Đối diện công viên hồ trái tim.',
+            'Liền kề trung tâm thể dục thể thao.',
+            '5 phút tới trung tâm thương mại AEON Mall Tân Phú',
+            '5 phút tới trung tâm thương mại Pandora City',
+            '7 phút tới Bến xe An Sương',
+            '10 phút tới Sân bay Tân Sơn Nhất',
+            '10 phút tới KCN Vĩnh Lộc, KCN Tân Bình, KCN Tân Tạo',
+            '10 phút tới Tòa nhà Etown Tower phường Tân Bình'
+        ];
     }
-
-    if (str_contains($bgMobile, '/storage/')) {
-        $bgMobile = strstr($bgMobile, '/storage/');
-    } elseif (str_contains($bgMobile, '/themes/')) {
-        $bgMobile = strstr($bgMobile, '/themes/');
-    }
-
-    // Đọc động các văn bản (text) từ Theme Option, tự động fallback về giá trị mặc định chuẩn nếu chưa cấu hình
-    $subtitle  = theme_option('ldp_s4_subtitle') ?: "Đăng ký ngay hôm nay để bắt đầu hành trình khám phá";
-    $title     = theme_option('ldp_s4_title') ?: "Kỷ nguyên mới - Công nghệ mới";
-    $btnText   = theme_option('ldp_s4_btn_text') ?: "Đăng ký ngay";
-    
-    $link1Text = theme_option('ldp_s4_link1_text') ?: "Đại lý gần nhất";
-    $link1Url  = theme_option('ldp_s4_link1_url') ?: "#dealer";
-    
-    $link2Text = theme_option('ldp_s4_link2_text') ?: "Sản phẩm";
-    $link2Url  = theme_option('ldp_s4_link2_url') ?: "#products";
-    
-    $link3Text = theme_option('ldp_s4_link3_text') ?: "Liên hệ";
-    $link3Url  = theme_option('ldp_s4_link3_url') ?: "#contact";
 @endphp
 
-<section id="section-lead-form" class="kia-section-lead-form">
-  <!-- Background Layer sử dụng thẻ picture responsive chuẩn HTML5 -->
-  <div class="background-layers">
-    <div class="merged-bg-container">
-      <picture class="bg-picture-wrapper">
-        <source media="(max-width: 768px)" srcset="{{ $bgMobile }}" />
-        <img
-          src="{{ $bgImage }}"
-          class="bg-layer"
-          alt="Background Section 4"
-        />
-      </picture>
+<section id="section-utilities" class="utilities-section">
+    <div class="utilities-wrapper">
+        <!-- 1. BÊN TRÁI: Ảnh bản đồ lớn tràn viền -->
+        <div class="utilities-map-panel js-reveal">
+            <img src="{{ $mapImg }}" alt="Bản đồ kết nối tiện ích Green Town Bình Tân" class="map-image" />
+        </div>
+
+        <!-- 2. BÊN PHẢI: Khối thông tin kết nối và hình trang trí -->
+        <div class="utilities-info-panel">
+            <!-- Khối chữ tiêu đề và danh sách -->
+            <div class="info-content-box">
+                <h2 class="utility-title font-selecta-black js-reveal">{{ $s4Title }}</h2>
+                <h3 class="utility-subtitle font-selecta-bold js-reveal" style="transition-delay: 100ms;">{{ $s4Subtitle }}</h3>
+
+                <ul class="utility-list">
+                    @foreach($s4Items as $index => $item)
+                        <li class="utility-item js-reveal" style="transition-delay: {{ 150 + ($index * 50) }}ms;">
+                            <span class="bullet-dot"></span>
+                            <div class="item-text font-montserrat-medium">{{ $item }}</div>
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
+
+            <!-- Hình ảnh lá cây trang trí bay rải rác -->
+            <div class="decor-leaves js-reveal" style="transition-delay: 600ms;">
+                <img src="{{ asset('themes/ripple/images/la-s4.png') }}" alt="Lá xanh trang trí" class="leaves-image" />
+            </div>
+
+            <!-- Mascot cậu bé vẫy tay ở góc phải -->
+            <div class="decor-mascot js-reveal" style="transition-delay: 750ms;">
+                <img src="{{ asset('themes/ripple/images/btv.png') }}" alt="Mascot Green Town" class="mascot-image" />
+            </div>
+        </div>
     </div>
-  </div>
-
-  <div class="content-container">
-    <!-- Registration Form Section -->
-    <div class="registration-area">
-      <p class="reg-subtitle js-reveal" style="transition-delay: 0.15s;">
-        {{ $subtitle }}
-      </p>
-      
-      <!-- Chuyển tiêu đề sang dạng văn bản CSS thuần chất lượng cao thay vì hình ảnh SVG dễ vỡ -->
-      <h2 class="reg-title js-reveal" style="transition-delay: 0.35s;">{{ $title }}</h2>
-
-      <!-- Bọc cụm ô nhập bằng thẻ Form chuẩn chỉnh, gửi dữ liệu dạng AJAX không load lại trang -->
-      <form action="{{ route('public.send.contact') }}" method="POST" class="kia-contact-ajax-form form-container js-reveal" style="transition-delay: 0.55s;">
-        @csrf
-        <div class="form-row">
-          <div class="form-label desktop-only">Họ/Tên*</div>
-          <div class="form-inputs split">
-            <div class="input-group">
-              <div class="form-label mobile-only">Họ*</div>
-              <div class="input-wrapper">
-                <input type="text" name="ho" placeholder="Họ" required />
-              </div>
-            </div>
-            <div class="input-group">
-              <div class="form-label mobile-only">Tên*</div>
-              <div class="input-wrapper">
-                <input type="text" name="ten" placeholder="Tên" required />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="form-label desktop-only">
-            Email*<br />
-            Số Điện Thoại*
-          </div>
-          <div class="form-inputs split">
-            <div class="input-group">
-              <div class="form-label mobile-only">Email*</div>
-              <div class="input-wrapper">
-                <input type="email" name="email" placeholder="Email" required />
-              </div>
-            </div>
-            <div class="input-group">
-              <div class="form-label mobile-only">Số Điện Thoại*</div>
-              <div class="input-wrapper">
-                <input type="tel" name="phone" placeholder="Số điện thoại" required />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="form-label desktop-only">Tỉnh/Thành*</div>
-          <div class="form-inputs full">
-            <div class="input-group">
-              <div class="form-label mobile-only">Tỉnh/Thành*</div>
-              <!-- Tích hợp Custom Select UI hoàn toàn đồng bộ, mượt mà và cao cấp -->
-              <div class="input-wrapper select-wrapper custom-select-container" id="kia-province-select-container">
-                <div class="custom-select-trigger" id="kia-province-select-trigger">
-                  <span class="selected-value">Vui lòng chọn tỉnh thành</span>
-                </div>
-                <div class="custom-options-dropdown">
-                  <ul class="custom-options-list" id="kia-custom-options-list">
-                    <li class="loading-text">Đang tải danh sách tỉnh thành...</li>
-                  </ul>
-                </div>
-                <!-- Input ẩn lưu giá trị Tỉnh/Thành gửi lên Laravel Controller -->
-                <input type="hidden" name="tinh_thanh" id="kia-hidden-province-input" required />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="submit-btn-wrapper">
-          <button type="submit" class="submit-btn">
-            <span class="btn-text">{{ $btnText }}</span>
-            <span class="btn-icon">›</span>
-          </button>
-        </div>
-      </form>
-    </div>
-
-    <!-- Footer Links Section (Tối giản 100% bằng CSS, sạch bóng các thẻ hình ảnh bị vỡ đường dẫn) -->
-    <div class="footer-links js-reveal" style="transition-delay: 0.75s;">
-      <a href="{{ $link1Url }}" class="footer-link">
-        <span>{{ $link1Text }}</span>
-      </a>
-      <a href="{{ $link2Url }}" class="footer-link center-link">
-        <span>{{ $link2Text }}</span>
-      </a>
-      <a href="{{ $link3Url }}" class="footer-link">
-        <span>{{ $link3Text }}</span>
-      </a>
-    </div>
-  </div>
 </section>

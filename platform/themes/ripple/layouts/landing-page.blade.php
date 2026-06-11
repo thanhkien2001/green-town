@@ -24,6 +24,10 @@
     {!! Theme::partial('landing.section2') !!}
     <!-- SECTION 3: VỊ TRÍ & KẾT NỐI -->
     {!! Theme::partial('landing.section3') !!}
+
+    <!-- SECTION 4: KẾT NỐI TIỆN ÍCH -->
+    {!! Theme::partial('landing.section4') !!}
+
     {{-- SECTION 5 --}}
     {!! Theme::partial('landing.section5') !!}
 
