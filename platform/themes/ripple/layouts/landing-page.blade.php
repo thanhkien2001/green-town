@@ -22,6 +22,13 @@
 
     <!-- SECTION 2: OVERVIEW -->
     {!! Theme::partial('landing.section2') !!}
+    {{-- SECTION 5 --}}
+    {!! Theme::partial('landing.section5') !!}
+
+    {{-- SECTION 6 --}}
+    {!! Theme::partial('landing.section6') !!}
+
+    <!-- SECTION 2: VIDEO TEASER -->
 
     <!-- SECTION 3: 3 ĐIỂM NỔI BẬT -->
 
