@@ -1,67 +1,42 @@
 @php
-    // Mock data for 5 rows
-    $rows = [
-        [
-            'title' => 'HÌNH ẢNH PHỐI CẢNH DỰ ÁN',
-            'subtitle' => '',
-            'images' => [
-                '/themes/ripple/images/s11_1.png',
-                '/themes/ripple/images/s11_1.png',
-                '/themes/ripple/images/s11_1.png',
-                '/themes/ripple/images/s11_1.png',
-                '/themes/ripple/images/s11_1.png',
-                '/themes/ripple/images/s11_1.png',
-            ]
-        ],
-        [
-            'title' => 'HÌNH ẢNH THỰC TẾ TẠI DỰ ÁN',
-            'subtitle' => 'NGOẠI KHU',
-            'images' => [
-                '/themes/ripple/images/s11_1.png',
-                '/themes/ripple/images/s11_1.png',
-                '/themes/ripple/images/s11_1.png',
-                '/themes/ripple/images/s11_1.png',
-                '/themes/ripple/images/s11_1.png',
-                '/themes/ripple/images/s11_1.png',
-            ]
-        ],
-        [
-            'title' => 'HÌNH ẢNH THỰC TẾ TẠI DỰ ÁN',
-            'subtitle' => 'KHU VỰC SINH HOẠT CHUNG & TIỆN ÍCH',
-            'images' => [
-                '/themes/ripple/images/s11_1.png',
-                '/themes/ripple/images/s11_1.png',
-                '/themes/ripple/images/s11_1.png',
-                '/themes/ripple/images/s11_1.png',
-                '/themes/ripple/images/s11_1.png',
-                '/themes/ripple/images/s11_1.png',
-            ]
-        ],
-        [
-            'title' => 'HÌNH ẢNH THỰC TẾ TẠI DỰ ÁN',
-            'subtitle' => 'NỘI KHU',
-            'images' => [
-                '/themes/ripple/images/s11_1.png',
-                '/themes/ripple/images/s11_1.png',
-                '/themes/ripple/images/s11_1.png',
-                '/themes/ripple/images/s11_1.png',
-                '/themes/ripple/images/s11_1.png',
-                '/themes/ripple/images/s11_1.png',
-            ]
-        ],
-        [
-            'title' => 'HÌNH ẢNH THỰC TẾ TẠI DỰ ÁN',
-            'subtitle' => 'TIẾN ĐỘ XÂY DỰNG TẦNG 09',
-            'images' => [
-                '/themes/ripple/images/s11_1.png',
-                '/themes/ripple/images/s11_1.png',
-                '/themes/ripple/images/s11_1.png',
-                '/themes/ripple/images/s11_1.png',
-                '/themes/ripple/images/s11_1.png',
-                '/themes/ripple/images/s11_1.png',
-            ]
-        ],
-    ];
+    $heading = theme_option('ldp_s11_heading', 'CHIẾT KHẤU 5%');
+    
+    // Parse the repeater data from theme options
+    $themeRows = theme_option('ldp_s11_rows');
+    $rows = [];
+    
+    if (!empty($themeRows)) {
+        $decodedRows = json_decode($themeRows, true);
+        if (is_array($decodedRows)) {
+            foreach ($decodedRows as $row) {
+                // Convert array of [['key'=>'title', 'value'=>'...'], ...] to ['title' => '...']
+                $rowData = [];
+                foreach ($row as $field) {
+                    if (isset($field['key']) && isset($field['value'])) {
+                        $rowData[$field['key']] = $field['value'];
+                    }
+                }
+                
+                // Collect images from image_1 to image_10
+                $images = [];
+                for ($i = 1; $i <= 10; $i++) {
+                    $imgKey = 'image_' . $i;
+                    if (!empty($rowData[$imgKey])) {
+                        $images[] = RvMedia::getImageUrl($rowData[$imgKey]);
+                    }
+                }
+                
+                // Only add the row if it has at least one image or a title
+                if (!empty($images) || !empty($rowData['title'])) {
+                    $rows[] = [
+                        'title'    => $rowData['title'] ?? '',
+                        'subtitle' => $rowData['subtitle'] ?? '',
+                        'images'   => $images,
+                    ];
+                }
+            }
+        }
+    }
 @endphp
 
 

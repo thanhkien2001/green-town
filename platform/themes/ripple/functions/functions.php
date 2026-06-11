@@ -715,3 +715,138 @@ theme_option()
             ],
         ],
     ]);
+
+    theme_option()->setSection([
+        'title'      => 'Landing Page: Section 11',
+        'desc'       => 'Cấu hình nội dung cho Section 11 (Slider Hình Ảnh)',
+        'id'         => 'opt-text-subsection-landing-page-s11',
+        'subsection' => true,
+        'icon'       => 'fas fa-images',
+        'fields'     => [
+            [
+                'id'         => 'ldp_s11_heading',
+                'type'       => 'text',
+                'label'      => 'Tiêu đề thanh ngang (CHIẾT KHẤU 5%)',
+                'attributes' => [
+                    'name'    => 'ldp_s11_heading',
+                    'value'   => 'CHIẾT KHẤU 5%',
+                    'options' => [
+                        'class' => 'form-control',
+                    ],
+                ],
+            ],
+            [
+                'id'         => 'ldp_s11_rows',
+                'type'       => 'repeater',
+                'label'      => 'Các hàng Slider',
+                'attributes' => [
+                    'name'   => 'ldp_s11_rows',
+                    'value'  => null,
+                    'fields' => [
+                        [
+                            'type'       => 'text',
+                            'label'      => 'Tiêu đề chính (Title)',
+                            'attributes' => [
+                                'name'    => 'title',
+                                'value'   => null,
+                                'options' => [
+                                    'class' => 'form-control',
+                                ],
+                            ],
+                        ],
+                        [
+                            'type'       => 'text',
+                            'label'      => 'Tiêu đề phụ (Subtitle - nếu có)',
+                            'attributes' => [
+                                'name'    => 'subtitle',
+                                'value'   => null,
+                                'options' => [
+                                    'class' => 'form-control',
+                                ],
+                            ],
+                        ],
+                        [
+                            'type'       => 'mediaImage',
+                            'label'      => 'Hình ảnh 1',
+                            'attributes' => [
+                                'name'  => 'image_1',
+                                'value' => null,
+                            ],
+                        ],
+                        [
+                            'type'       => 'mediaImage',
+                            'label'      => 'Hình ảnh 2',
+                            'attributes' => [
+                                'name'  => 'image_2',
+                                'value' => null,
+                            ],
+                        ],
+                        [
+                            'type'       => 'mediaImage',
+                            'label'      => 'Hình ảnh 3',
+                            'attributes' => [
+                                'name'  => 'image_3',
+                                'value' => null,
+                            ],
+                        ],
+                        [
+                            'type'       => 'mediaImage',
+                            'label'      => 'Hình ảnh 4',
+                            'attributes' => [
+                                'name'  => 'image_4',
+                                'value' => null,
+                            ],
+                        ],
+                        [
+                            'type'       => 'mediaImage',
+                            'label'      => 'Hình ảnh 5',
+                            'attributes' => [
+                                'name'  => 'image_5',
+                                'value' => null,
+                            ],
+                        ],
+                        [
+                            'type'       => 'mediaImage',
+                            'label'      => 'Hình ảnh 6',
+                            'attributes' => [
+                                'name'  => 'image_6',
+                                'value' => null,
+                            ],
+                        ],
+                        [
+                            'type'       => 'mediaImage',
+                            'label'      => 'Hình ảnh 7',
+                            'attributes' => [
+                                'name'  => 'image_7',
+                                'value' => null,
+                            ],
+                        ],
+                        [
+                            'type'       => 'mediaImage',
+                            'label'      => 'Hình ảnh 8',
+                            'attributes' => [
+                                'name'  => 'image_8',
+                                'value' => null,
+                            ],
+                        ],
+                        [
+                            'type'       => 'mediaImage',
+                            'label'      => 'Hình ảnh 9',
+                            'attributes' => [
+                                'name'  => 'image_9',
+                                'value' => null,
+                            ],
+                        ],
+                        [
+                            'type'       => 'mediaImage',
+                            'label'      => 'Hình ảnh 10',
+                            'attributes' => [
+                                'name'  => 'image_10',
+                                'value' => null,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+    ]);
