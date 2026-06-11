@@ -6,7 +6,7 @@
 // ── Font Face ─────────────────────────────────────────────────────────────────
 @font-face {
     font-family: 'SVN-Selecta';
-    src: url('../../fonts/SVN-Selecta-Regular.otf') format('opentype');
+    src: url('../fonts/SVN-Selecta-Regular.otf') format('opentype');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -14,7 +14,7 @@
 
 @font-face {
     font-family: 'SVN-Selecta';
-    src: url('../../fonts/SVN-Selecta-Medium.otf') format('opentype');
+    src: url('../fonts/SVN-Selecta-Medium.otf') format('opentype');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -22,7 +22,7 @@
 
 @font-face {
     font-family: 'SVN-Selecta';
-    src: url('../../fonts/SVN-Selecta-Bold.otf') format('opentype');
+    src: url('../fonts/SVN-Selecta-Bold.otf') format('opentype');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -30,7 +30,7 @@
 
 @font-face {
     font-family: 'SVN-Selecta';
-    src: url('../../fonts/SVN-Selecta-Black.otf') format('opentype');
+    src: url('../fonts/SVN-Selecta-Black.otf') format('opentype');
     font-weight: 900;
     font-style: normal;
     font-display: swap;
@@ -38,7 +38,7 @@
 
 @font-face {
     font-family: 'Montserrat';
-    src: url('../../fonts/Montserrat-Medium.ttf') format('truetype');
+    src: url('../fonts/Montserrat-Medium.ttf') format('truetype');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -46,7 +46,7 @@
 
 @font-face {
     font-family: 'Montserrat';
-    src: url('../../fonts/Montserrat-Bold.ttf') format('truetype');
+    src: url('../fonts/Montserrat-Bold.ttf') format('truetype');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -121,53 +121,5 @@ body {
     &.is-revealed {
         opacity: 1;
         transform: translateY(0);
-    }
-}
-
-// ── Button KIA CTA ─────────────────────────────────────────────────────────────
-.btn-kia-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    padding: clamp(12px, 2vw, 16px) clamp(32px, 5vw, 60px);
-    font-family: $font-primary;
-    font-weight: 600;
-    font-size: clamp(16px, 2vw, 20px);
-    color: #0e0d12;
-    background: linear-gradient(180deg, #ffffff 0%, #e0e0e0 100%);
-    border: none;
-    text-decoration: none;
-    letter-spacing: 0.02em;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.35s $ease-smooth;
-    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.15);
-
-    .btn-arrow {
-        font-size: 22px;
-        transition: transform 0.3s $ease-smooth;
-    }
-
-    &::after {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
-        transform: translateX(-110%);
-        transition: transform 0.55s $ease-smooth;
-    }
-
-    &:hover {
-        background: linear-gradient(180deg, #ffffff 0%, #ffffff 100%);
-        box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
-        transform: translateY(-2px);
-
-        .btn-arrow {
-            transform: translateX(4px);
-        }
-
-        &::after {
-            transform: translateX(110%);
-        }
     }
 }

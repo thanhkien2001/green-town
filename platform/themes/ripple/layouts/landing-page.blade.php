@@ -18,6 +18,12 @@
     <!-- SECTION 1: HERO BANNER -->
     {!! Theme::partial('landing.section1') !!}
 
+    {{-- SECTION 5 --}}
+    {!! Theme::partial('landing.section5') !!}
+
+    {{-- SECTION 6 --}}
+    {!! Theme::partial('landing.section6') !!}
+
     <!-- SECTION 2: VIDEO TEASER -->
 
     <!-- SECTION 3: 3 ĐIỂM NỔI BẬT -->

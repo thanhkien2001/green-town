@@ -472,146 +472,214 @@ theme_option()
     //     ],
     // ])
 
-    // // Section 5
-    // ->setSection([
-    //     'title'      => 'Landing Page: S5 Footer',
-    //     'desc'       => 'Cấu hình Section 5 (Footer)',
-    //     'priority'   => 14,
-    //     'id'         => 'opt-section-landing-s5',
-    //     'subsection' => true,
-    //     'icon'       => 'fa fa-arrow-down',
-    //     'fields'     => [
-    //         [
-    //             'id'         => 'ldp_s5_logo',
-    //             'type'       => 'mediaImage',
-    //             'label'      => 'Logo Footer (VD: KIA Movement that inspires)',
-    //             'attributes' => [
-    //                 'name'  => 'ldp_s5_logo',
-    //                 'value' => null,
-    //             ],
-    //         ],
-    //         [
-    //             'id'         => 'ldp_s5_hotline',
-    //             'type'       => 'text',
-    //             'label'      => 'Hotline CSKH',
-    //             'attributes' => [
-    //                 'name'    => 'ldp_s5_hotline',
-    //                 'value'   => null,
-    //                 'options' => [
-    //                     'class'       => 'form-control',
-    //                     'placeholder' => '1900 545 591',
-    //                 ],
-    //             ],
-    //         ],
-    //         [
-    //             'id'         => 'ldp_s5_fb_url',
-    //             'type'       => 'url',
-    //             'label'      => 'Link Facebook',
-    //             'attributes' => [
-    //                 'name'    => 'ldp_s5_fb_url',
-    //                 'value'   => null,
-    //                 'options' => [
-    //                     'class'       => 'form-control',
-    //                     'placeholder' => 'https://facebook.com/...',
-    //                 ],
-    //             ],
-    //         ],
-    //         [
-    //             'id'         => 'ldp_s5_ig_url',
-    //             'type'       => 'url',
-    //             'label'      => 'Link Instagram',
-    //             'attributes' => [
-    //                 'name'    => 'ldp_s5_ig_url',
-    //                 'value'   => null,
-    //                 'options' => [
-    //                     'class'       => 'form-control',
-    //                     'placeholder' => 'https://instagram.com/...',
-    //                 ],
-    //             ],
-    //         ],
-    //         [
-    //             'id'         => 'ldp_s5_yt_url',
-    //             'type'       => 'url',
-    //             'label'      => 'Link YouTube',
-    //             'attributes' => [
-    //                 'name'    => 'ldp_s5_yt_url',
-    //                 'value'   => null,
-    //                 'options' => [
-    //                     'class'       => 'form-control',
-    //                     'placeholder' => 'https://youtube.com/...',
-    //                 ],
-    //             ],
-    //         ],
-    //         [
-    //             'id'         => 'ldp_s5_terms_text',
-    //             'type'       => 'text',
-    //             'label'      => 'Text Link Điều khoản',
-    //             'attributes' => [
-    //                 'name'    => 'ldp_s5_terms_text',
-    //                 'value'   => null,
-    //                 'options' => [
-    //                     'class'       => 'form-control',
-    //                     'placeholder' => 'Các điều khoản và điều kiện chung',
-    //                 ],
-    //             ],
-    //         ],
-    //         [
-    //             'id'         => 'ldp_s5_terms_url',
-    //             'type'       => 'url',
-    //             'label'      => 'URL Điều khoản',
-    //             'attributes' => [
-    //                 'name'    => 'ldp_s5_terms_url',
-    //                 'value'   => null,
-    //                 'options' => [
-    //                     'class'       => 'form-control',
-    //                     'placeholder' => '#',
-    //                 ],
-    //             ],
-    //         ],
-    //         [
-    //             'id'         => 'ldp_s5_privacy_text',
-    //             'type'       => 'text',
-    //             'label'      => 'Text Link Bảo mật',
-    //             'attributes' => [
-    //                 'name'    => 'ldp_s5_privacy_text',
-    //                 'value'   => null,
-    //                 'options' => [
-    //                     'class'       => 'form-control',
-    //                     'placeholder' => 'Chính sách bảo mật thông tin cá nhân',
-    //                 ],
-    //             ],
-    //         ],
-    //         [
-    //             'id'         => 'ldp_s5_privacy_url',
-    //             'type'       => 'url',
-    //             'label'      => 'URL Bảo mật',
-    //             'attributes' => [
-    //                 'name'    => 'ldp_s5_privacy_url',
-    //                 'value'   => null,
-    //                 'options' => [
-    //                     'class'       => 'form-control',
-    //                     'placeholder' => '#',
-    //                 ],
-    //             ],
-    //         ],
-    //         [
-    //             'id'         => 'ldp_s5_bg',
-    //             'type'       => 'mediaImage',
-    //             'label'      => 'Background Desktop (Section 5)',
-    //             'attributes' => [
-    //                 'name'  => 'ldp_s5_bg',
-    //                 'value' => null,
-    //             ],
-    //         ],
-    //         [
-    //             'id'         => 'ldp_s5_bg_mb',
-    //             'type'       => 'mediaImage',
-    //             'label'      => 'Background Mobile (Section 5)',
-    //             'attributes' => [
-    //                 'name'  => 'ldp_s5_bg_mb',
-    //                 'value' => null,
-    //             ],
-    //         ],
-    //     ],
-    // ]);
+    // Section 5
+    theme_option()->setSection([
+        'title'      => 'Landing Page: S5 Features',
+        'desc'       => 'Cấu hình Section 5 (Quyết định lên đời)',
+        'priority'   => 14,
+        'id'         => 'opt-section-landing-s5',
+        'subsection' => true,
+        'icon'       => 'fa fa-list',
+        'fields'     => [
+            [
+                'id'         => 'ldp_s5_heading',
+                'type'       => 'text',
+                'label'      => 'Tiêu đề chính',
+                'attributes' => [
+                    'name'    => 'ldp_s5_heading',
+                    'value'   => null,
+                    'options' => [
+                        'class'       => 'form-control',
+                        'placeholder' => 'QUYẾT ĐỊNH LÊN ĐỜI CÙNG SOLENA BY GREEN TOWN',
+                    ],
+                ],
+            ],
+            [
+                'id'         => 'ldp_s5_f1_title',
+                'type'       => 'text',
+                'label'      => 'Feature 1: Tiêu đề',
+                'attributes' => [
+                    'name'    => 'ldp_s5_f1_title',
+                    'value'   => null,
+                    'options' => [
+                        'class'       => 'form-control',
+                        'placeholder' => 'MẢNH GHÉP MỚI',
+                    ],
+                ],
+            ],
+            [
+                'id'         => 'ldp_s5_f1_desc',
+                'type'       => 'textarea',
+                'label'      => 'Feature 1: Mô tả',
+                'attributes' => [
+                    'name'    => 'ldp_s5_f1_desc',
+                    'value'   => null,
+                    'options' => [
+                        'class'       => 'form-control',
+                        'rows'        => 3,
+                    ],
+                ],
+            ],
+            [
+                'id'         => 'ldp_s5_f2_title',
+                'type'       => 'text',
+                'label'      => 'Feature 2: Tiêu đề',
+                'attributes' => [
+                    'name'    => 'ldp_s5_f2_title',
+                    'value'   => null,
+                    'options' => [
+                        'class'       => 'form-control',
+                    ],
+                ],
+            ],
+            [
+                'id'         => 'ldp_s5_f2_desc',
+                'type'       => 'textarea',
+                'label'      => 'Feature 2: Mô tả',
+                'attributes' => [
+                    'name'    => 'ldp_s5_f2_desc',
+                    'value'   => null,
+                    'options' => [
+                        'class'       => 'form-control',
+                        'rows'        => 3,
+                    ],
+                ],
+            ],
+            [
+                'id'         => 'ldp_s5_f3_title',
+                'type'       => 'text',
+                'label'      => 'Feature 3: Tiêu đề',
+                'attributes' => [
+                    'name'    => 'ldp_s5_f3_title',
+                    'value'   => null,
+                    'options' => [
+                        'class'       => 'form-control',
+                    ],
+                ],
+            ],
+            [
+                'id'         => 'ldp_s5_f3_desc',
+                'type'       => 'textarea',
+                'label'      => 'Feature 3: Mô tả',
+                'attributes' => [
+                    'name'    => 'ldp_s5_f3_desc',
+                    'value'   => null,
+                    'options' => [
+                        'class'       => 'form-control',
+                        'rows'        => 3,
+                    ],
+                ],
+            ],
+            [
+                'id'         => 'ldp_s5_f4_title',
+                'type'       => 'text',
+                'label'      => 'Feature 4: Tiêu đề',
+                'attributes' => [
+                    'name'    => 'ldp_s5_f4_title',
+                    'value'   => null,
+                    'options' => [
+                        'class'       => 'form-control',
+                    ],
+                ],
+            ],
+            [
+                'id'         => 'ldp_s5_f4_desc',
+                'type'       => 'textarea',
+                'label'      => 'Feature 4: Mô tả',
+                'attributes' => [
+                    'name'    => 'ldp_s5_f4_desc',
+                    'value'   => null,
+                    'options' => [
+                        'class'       => 'form-control',
+                        'rows'        => 3,
+                    ],
+                ],
+            ],
+            [
+                'id'         => 'ldp_s5_f5_title',
+                'type'       => 'text',
+                'label'      => 'Feature 5: Tiêu đề',
+                'attributes' => [
+                    'name'    => 'ldp_s5_f5_title',
+                    'value'   => null,
+                    'options' => [
+                        'class'       => 'form-control',
+                    ],
+                ],
+            ],
+            [
+                'id'         => 'ldp_s5_f5_desc',
+                'type'       => 'textarea',
+                'label'      => 'Feature 5: Mô tả',
+                'attributes' => [
+                    'name'    => 'ldp_s5_f5_desc',
+                    'value'   => null,
+                    'options' => [
+                        'class'       => 'form-control',
+                        'rows'        => 3,
+                    ],
+                ],
+            ],
+        ],
+    ]);
 
+
+    theme_option()->setSection([
+        'title'      => 'Landing Page: Section 6',
+        'desc'       => 'Cấu hình nội dung cho Section 6 (Tiện ích nội khu)',
+        'id'         => 'opt-text-subsection-landing-page-s6',
+        'subsection' => true,
+        'icon'       => 'fas fa-star',
+        'fields'     => [
+            [
+                'id'         => 'ldp_s6_heading1',
+                'type'       => 'text',
+                'label'      => 'Tiêu đề lớn (20 TIỆN ÍCH NỘI KHU)',
+                'attributes' => [
+                    'name'    => 'ldp_s6_heading1',
+                    'value'   => '20 TIỆN ÍCH NỘI KHU',
+                    'options' => [
+                        'class' => 'form-control',
+                    ],
+                ],
+            ],
+            [
+                'id'         => 'ldp_s6_heading2',
+                'type'       => 'text',
+                'label'      => 'Tiêu đề nhỏ (ĐẶC QUYỀN...)',
+                'attributes' => [
+                    'name'    => 'ldp_s6_heading2',
+                    'value'   => 'ĐẶC QUYỀN DÀNH RIÊNG CHO CƯ DÂN',
+                    'options' => [
+                        'class' => 'form-control',
+                    ],
+                ],
+            ],
+            // Slider items
+            ...array_merge(...array_map(function($i) {
+                return [
+                    [
+                        'id'         => 'ldp_s6_img'.$i,
+                        'type'       => 'mediaImage',
+                        'label'      => 'Hình ảnh Slider '.$i,
+                        'attributes' => [
+                            'name'  => 'ldp_s6_img'.$i,
+                            'value' => null,
+                        ],
+                    ],
+                    [
+                        'id'         => 'ldp_s6_title'.$i,
+                        'type'       => 'text',
+                        'label'      => 'Tiêu đề Slider '.$i,
+                        'attributes' => [
+                            'name'    => 'ldp_s6_title'.$i,
+                            'value'   => null,
+                            'options' => [
+                                'class' => 'form-control',
+                            ],
+                        ],
+                    ]
+                ];
+            }, range(1, 5)))
+        ],
+    ]);
