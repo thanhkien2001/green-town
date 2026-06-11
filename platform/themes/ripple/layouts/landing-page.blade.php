@@ -7,8 +7,10 @@
     <title>{{ theme_option('ldp_seo_title') ?: theme_option('site_title', 'KIA Vietnam') }}</title>
     <meta name="description" content="{{ theme_option('ldp_seo_description') ?: '' }}">
     @php
-        $ldpCssUrl = asset('themes/ripple/css/landing-page.css');
-        $ldpJsUrl  = asset('themes/ripple/js/landing-page.js');
+        $cssPath = public_path('themes/ripple/css/landing-page.css');
+        $ldpCssUrl = asset('themes/ripple/css/landing-page.css') . (file_exists($cssPath) ? '?v=' . filemtime($cssPath) : '');
+        $jsPath = public_path('themes/ripple/js/landing-page.js');
+        $ldpJsUrl = asset('themes/ripple/js/landing-page.js') . (file_exists($jsPath) ? '?v=' . filemtime($jsPath) : '');
     @endphp
     <link rel="stylesheet" href="{{ $ldpCssUrl }}">
 </head>
@@ -18,7 +20,8 @@
     <!-- SECTION 1: HERO BANNER -->
     {!! Theme::partial('landing.section1') !!}
 
-    <!-- SECTION 2: VIDEO TEASER -->
+    <!-- SECTION 2: OVERVIEW -->
+    {!! Theme::partial('landing.section2') !!}
 
     <!-- SECTION 3: 3 ĐIỂM NỔI BẬT -->
 

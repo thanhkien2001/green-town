@@ -110,85 +110,129 @@ theme_option()
                 ],
             ],
         ],
-    ]);
-    
+    ])
     // Section 2
-    // ->setSection([
-    //     'title'      => 'Landing Page: S2 Video',
-    //     'desc'       => 'Cấu hình Section 2 (Video Teaser)',
-    //     'priority'   => 11,
-    //     'id'         => 'opt-section-landing-s2',
-    //     'subsection' => true,
-    //     'icon'       => 'fa fa-play-circle',
-    //     'fields'     => [
-    //         [
-    //             'id'         => 'ldp_s2_video_url',
-    //             'type'       => 'text',
-    //             'label'      => 'Video URL (MP4, YouTube, Vimeo, etc)',
-    //             'attributes' => [
-    //                 'name'    => 'ldp_s2_video_url',
-    //                 'value'   => null,
-    //                 'options' => [
-    //                     'class'       => 'form-control',
-    //                     'placeholder' => '/storage/video.mp4',
-    //                 ],
-    //             ],
-    //         ],
-    //         [
-    //             'id'         => 'ldp_s2_video_poster',
-    //             'type'       => 'mediaImage',
-    //             'label'      => 'Ảnh Thumbnail (Preview cho Video)',
-    //             'attributes' => [
-    //                 'name'  => 'ldp_s2_video_poster',
-    //                 'value' => null,
-    //             ],
-    //         ],
-    //         [
-    //             'id'         => 'ldp_s2_title',
-    //             'type'       => 'text',
-    //             'label'      => 'Tiêu đề Overlay',
-    //             'attributes' => [
-    //                 'name'    => 'ldp_s2_title',
-    //                 'value'   => null,
-    //                 'options' => [
-    //                     'class'       => 'form-control',
-    //                     'placeholder' => 'ĐIỀU ĐẶC BIỆT',
-    //                 ],
-    //             ],
-    //         ],
-    //         [
-    //             'id'         => 'ldp_s2_subtitle',
-    //             'type'       => 'text',
-    //             'label'      => 'Phụ đề Overlay',
-    //             'attributes' => [
-    //                 'name'    => 'ldp_s2_subtitle',
-    //                 'value'   => null,
-    //                 'options' => [
-    //                     'class'       => 'form-control',
-    //                     'placeholder' => 'ĐÃ LỘ DIỆN',
-    //                 ],
-    //             ],
-    //         ],
-    //         [
-    //             'id'         => 'ldp_s2_bg',
-    //             'type'       => 'mediaImage',
-    //             'label'      => 'Background Desktop (Section 2)',
-    //             'attributes' => [
-    //                 'name'  => 'ldp_s2_bg',
-    //                 'value' => null,
-    //             ],
-    //         ],
-    //         [
-    //             'id'         => 'ldp_s2_bg_mb',
-    //             'type'       => 'mediaImage',
-    //             'label'      => 'Background Mobile (Section 2)',
-    //             'attributes' => [
-    //                 'name'  => 'ldp_s2_bg_mb',
-    //                 'value' => null,
-    //             ],
-    //         ],
-    //     ],
-    // ])
+    ->setSection([
+        'title'      => 'Landing Page: S2 Overview',
+        'desc'       => 'Cấu hình Section 2 (Thông tin tổng quan)',
+        'priority'   => 11,
+        'id'         => 'opt-section-landing-s2',
+        'subsection' => true,
+        'icon'       => 'fa fa-info-circle',
+        'fields'     => [
+            [
+                'id'         => 'ldp_s2_bg',
+                'type'       => 'mediaImage',
+                'label'      => 'Ảnh nền Section 2',
+                'attributes' => [
+                    'name'  => 'ldp_s2_bg',
+                    'value' => null,
+                ],
+            ],
+            [
+                'id'         => 'ldp_s2_title',
+                'type'       => 'text',
+                'label'      => 'Tiêu đề chính',
+                'attributes' => [
+                    'name'    => 'ldp_s2_title',
+                    'value'   => 'THÔNG TIN TỔNG QUAN',
+                    'options' => [
+                        'class' => 'form-control',
+                    ],
+                ],
+            ],
+            [
+                'id'         => 'ldp_s2_col1_title',
+                'type'       => 'text',
+                'label'      => 'Tiêu đề Cột 1',
+                'attributes' => [
+                    'name'    => 'ldp_s2_col1_title',
+                    'value'   => 'SOLENA',
+                    'options' => [
+                        'class' => 'form-control',
+                    ],
+                ],
+            ],
+            [
+                'id'         => 'ldp_s2_col1_items',
+                'type'       => 'repeater',
+                'label'      => 'Thông tin Cột 1',
+                'attributes' => [
+                    'name'    => 'ldp_s2_col1_items',
+                    'value'   => null,
+                    'fields'  => [
+                        [
+                            'type'       => 'text',
+                            'label'      => 'Tiêu đề dòng (Label)',
+                            'attributes' => [
+                                'name'    => 'label',
+                                'value'   => null,
+                                'options' => [
+                                    'class' => 'form-control',
+                                ],
+                            ],
+                        ],
+                        [
+                            'type'       => 'text',
+                            'label'      => 'Nội dung (Value)',
+                            'attributes' => [
+                                'name'    => 'value',
+                                'value'   => null,
+                                'options' => [
+                                    'class' => 'form-control',
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            [
+                'id'         => 'ldp_s2_col2_title',
+                'type'       => 'text',
+                'label'      => 'Tiêu đề Cột 2',
+                'attributes' => [
+                    'name'    => 'ldp_s2_col2_title',
+                    'value'   => 'GREEN TOWN BÌNH TÂN',
+                    'options' => [
+                        'class' => 'form-control',
+                    ],
+                ],
+            ],
+            [
+                'id'         => 'ldp_s2_col2_items',
+                'type'       => 'repeater',
+                'label'      => 'Thông tin Cột 2',
+                'attributes' => [
+                    'name'    => 'ldp_s2_col2_items',
+                    'value'   => null,
+                    'fields'  => [
+                        [
+                            'type'       => 'text',
+                            'label'      => 'Tiêu đề dòng (Label)',
+                            'attributes' => [
+                                'name'    => 'label',
+                                'value'   => null,
+                                'options' => [
+                                    'class' => 'form-control',
+                                ],
+                            ],
+                        ],
+                        [
+                            'type'       => 'text',
+                            'label'      => 'Nội dung (Value)',
+                            'attributes' => [
+                                'name'    => 'value',
+                                'value'   => null,
+                                'options' => [
+                                    'class' => 'form-control',
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+    ]);
 
     // // Section 3
     // ->setSection([

@@ -1,13 +1,13 @@
 @php
     $bgImageRaw = theme_option('ldp_s1_bg');
-    if (!empty($bgImageRaw)) {
+    if (!empty($bgImageRaw) && $bgImageRaw != '0' && $bgImageRaw != 'null') {
         if (filter_var($bgImageRaw, FILTER_VALIDATE_URL) || str_starts_with($bgImageRaw, '/') || str_contains($bgImageRaw, 'storage/')) {
             $bgImage = $bgImageRaw;
         } else {
             $bgImage = RvMedia::getImageUrl($bgImageRaw);
         }
     } else {
-        $bgImage = '/themes/ripple/images/HeroNew.webp';
+        $bgImage = asset('themes/ripple/images/HeroNew.webp');
     }
 @endphp
 

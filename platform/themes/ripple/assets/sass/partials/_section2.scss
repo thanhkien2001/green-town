@@ -1,0 +1,497 @@
+.overview-section {
+  width: 100%;
+  height: 100vh;
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: stretch;
+
+  // Lớp phủ tối mờ nhẹ để chữ trắng luôn nổi bật trên mọi ảnh nền
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.1) 40%, rgba(0,0,0,0.6) 100%);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  // ─── Container ─────────────────────────────────────────────────────────────
+  .overview-container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 60px 0 30px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  // ─── Tiêu đề chính ─────────────────────────────────────────────────────────
+  .overview-main-title {
+    color: #ffffff;
+    font-size: 2.25rem;
+    text-transform: uppercase;
+    margin: 0;
+    padding-left: 80px;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.9);
+    letter-spacing: 0.5px;
+  }
+
+  // ─── Grid 2 cột ────────────────────────────────────────────────────────────
+  .overview-grid {
+    display: grid;
+    grid-template-columns: 1.35fr 1fr;
+    gap: 0;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  // ─── Cột ───────────────────────────────────────────────────────────────────
+  .overview-column {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    &.overview-column-left {
+      align-items: flex-start;
+      padding-left: 80px;
+      padding-right: 20px;
+
+      .info-label {
+        width: 200px;
+      }
+    }
+
+    &.overview-column-right {
+      align-items: flex-end;
+      padding-right: 80px;
+      padding-left: 40px;
+
+      .info-label {
+        width: 210px;
+      }
+
+      .column-info-list {
+        max-width: 670px; // 750px badge - 80px padding-right
+      }
+    }
+  }
+
+  // ─── Badge xanh ────────────────────────────────────────────────────────────
+  .column-badge {
+    color: #ffffff;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    height: 62px;
+    display: inline-flex;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    background-color: #55a24d;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+
+    // Badge trái: bám sát lề trái, bo tròn góc phải
+    &.badge-left {
+      width: 310px;
+      margin-left: -80px;
+      padding-left: 80px;
+      padding-right: 24px;
+      border-radius: 0 6px 6px 0;
+    }
+
+    // Badge phải: bám sát lề phải, bo tròn góc trái
+    &.badge-right {
+      width: 750px;
+      margin-right: -80px;
+      padding-left: 24px;
+      padding-right: 80px;
+      border-radius: 6px 0 0 6px;
+    }
+  }
+
+  // ─── Danh sách thông tin ───────────────────────────────────────────────────
+  .column-info-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+
+    li {
+      color: #ffffff;
+      font-size: 1.375rem;
+      line-height: 1.6;
+      margin-bottom: 8px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.95);
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      width: 100%;
+
+      &.info-sub-item {
+        padding-left: 0;
+      }
+    }
+  }
+
+  .info-label {
+    margin-right: 12px;
+    flex-shrink: 0;
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  .info-value {
+    flex-grow: 1;
+    text-align: left;
+    word-break: break-word;
+  }
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // RESPONSIVE BREAKPOINTS
+  // ─────────────────────────────────────────────────────────────────────────────
+
+  // ─── ≤ 1440px: Large laptop ────────────────────────────────────────────────
+  @media (max-width: 1440px) {
+    .column-badge {
+      font-size: 2.1rem;
+      height: 56px;
+
+      &.badge-left {
+        width: 270px;
+      }
+      &.badge-right {
+        width: 640px;
+      }
+    }
+
+    .overview-column-right {
+      .column-info-list {
+        max-width: 560px; // 640px - 80px
+      }
+    }
+
+    .column-info-list li {
+      font-size: 1.2rem;
+    }
+  }
+
+  // ─── ≤ 1280px: Small laptop / large tablet landscape ───────────────────────
+  @media (max-width: 1280px) {
+    .overview-main-title {
+      font-size: 1.9rem;
+      padding-left: 60px;
+    }
+
+    .overview-column {
+      &.overview-column-left {
+        padding-left: 60px;
+        padding-right: 16px;
+
+        .info-label {
+          width: 170px;
+        }
+      }
+
+      &.overview-column-right {
+        padding-right: 60px;
+        padding-left: 30px;
+
+        .info-label {
+          width: 185px;
+        }
+
+        .column-info-list {
+          max-width: 490px; // điều chỉnh theo padding mới
+        }
+      }
+    }
+
+    .column-badge {
+      font-size: 1.8rem;
+      height: 52px;
+
+      &.badge-left {
+        width: 250px;
+        margin-left: -60px;
+        padding-left: 60px;
+      }
+
+      &.badge-right {
+        width: 550px;
+        margin-right: -60px;
+        padding-right: 60px;
+      }
+    }
+
+    .column-info-list li {
+      font-size: 1.1rem;
+      margin-bottom: 6px;
+    }
+  }
+
+  // ─── ≤ 1024px: Tablet landscape / small laptop ─────────────────────────────
+  @media (max-width: 1024px) {
+    height: auto;
+    aspect-ratio: 16 / 9;
+    background-size: cover;
+
+    .overview-container {
+      padding: 28px 0;
+    }
+
+    .overview-main-title {
+      font-size: 1.6rem;
+      padding-left: 40px;
+    }
+
+    .overview-column {
+      &.overview-column-left {
+        padding-left: 40px;
+        padding-right: 14px;
+
+        .info-label {
+          width: 148px;
+        }
+      }
+
+      &.overview-column-right {
+        padding-right: 40px;
+        padding-left: 20px;
+
+        .info-label {
+          width: 165px;
+        }
+
+        .column-info-list {
+          max-width: 380px;
+        }
+      }
+    }
+
+    .column-badge {
+      font-size: 1.4rem;
+      height: 46px;
+      margin-bottom: 14px;
+
+      &.badge-left {
+        width: 230px;
+        margin-left: -40px;
+        padding-left: 40px;
+        padding-right: 18px;
+      }
+
+      &.badge-right {
+        width: 420px;
+        margin-right: -40px;
+        padding-right: 40px;
+        padding-left: 18px;
+      }
+    }
+
+    .column-info-list li {
+      font-size: 0.9rem;
+      margin-bottom: 5px;
+      line-height: 1.5;
+    }
+
+    .info-label {
+      margin-right: 8px;
+    }
+  }
+
+  // ─── ≤ 768px: Tablet portrait ──────────────────────────────────────────────
+  @media (max-width: 768px) {
+    height: auto;
+    aspect-ratio: auto;
+    background-size: cover;
+
+    &::before {
+      background: rgba(0,0,0,0.65);
+    }
+
+    .overview-container {
+      padding: 32px 0;
+      justify-content: flex-start;
+      gap: 24px;
+    }
+
+    .overview-main-title {
+      font-size: 1.4rem;
+      padding-left: 24px;
+    }
+
+    // Chuyển sang layout 1 cột
+    .overview-grid {
+      grid-template-columns: 1fr;
+      gap: 28px;
+      margin-bottom: 0;
+    }
+
+    .overview-column {
+      &.overview-column-left {
+        align-items: flex-start;
+        padding-left: 24px;
+        padding-right: 24px;
+
+        .info-label {
+          width: 150px;
+        }
+      }
+
+      &.overview-column-right {
+        align-items: flex-start; // Căn trái khi 1 cột
+        padding-left: 24px;
+        padding-right: 24px;
+
+        .info-label {
+          width: 165px;
+        }
+
+        .column-info-list {
+          max-width: none;
+        }
+      }
+    }
+
+    .column-badge {
+      font-size: 1.3rem;
+      height: 46px;
+      margin-bottom: 14px;
+
+      &.badge-left {
+        width: calc(100% + 24px);
+        margin-left: -24px;
+        padding-left: 24px;
+        padding-right: 16px;
+        border-radius: 0 6px 6px 0;
+        max-width: 280px;
+      }
+
+      &.badge-right {
+        width: calc(100% + 24px);
+        margin-left: -24px;
+        margin-right: 0;
+        padding-left: 24px;
+        padding-right: 16px;
+        border-radius: 0 6px 6px 0; // Cùng kiểu với badge trái khi 1 cột
+        align-self: flex-start;
+        justify-content: flex-start;
+        max-width: 340px;
+      }
+    }
+
+    .column-info-list li {
+      font-size: 0.95rem;
+      margin-bottom: 7px;
+      line-height: 1.55;
+    }
+
+    .info-label {
+      width: auto !important;
+      white-space: normal;
+      text-align: right;
+      margin-right: 8px;
+    }
+  }
+
+  // ─── ≤ 480px: Mobile ───────────────────────────────────────────────────────
+  @media (max-width: 480px) {
+    &::before {
+      background: rgba(0,0,0,0.72);
+    }
+
+    .overview-container {
+      padding: 24px 0;
+      gap: 20px;
+    }
+
+    .overview-main-title {
+      font-size: 1.15rem;
+      padding-left: 16px;
+    }
+
+    .overview-grid {
+      gap: 24px;
+    }
+
+    .overview-column {
+      &.overview-column-left,
+      &.overview-column-right {
+        padding-left: 16px;
+        padding-right: 16px;
+
+        .info-label {
+          width: 120px;
+        }
+      }
+    }
+
+    .column-badge {
+      font-size: 1.05rem;
+      height: 40px;
+      margin-bottom: 10px;
+
+      &.badge-left {
+        width: calc(100% + 16px);
+        margin-left: -16px;
+        padding-left: 16px;
+        padding-right: 12px;
+        max-width: 220px;
+      }
+
+      &.badge-right {
+        width: calc(100% + 16px);
+        margin-left: -16px;
+        padding-left: 16px;
+        padding-right: 12px;
+        max-width: 260px;
+      }
+    }
+
+    .column-info-list li {
+      font-size: 0.82rem;
+      margin-bottom: 5px;
+      line-height: 1.5;
+    }
+
+    .info-label {
+      width: 110px !important;
+      margin-right: 6px;
+    }
+  }
+
+  // ─── ≤ 360px: Nhỏ nhất ─────────────────────────────────────────────────────
+  @media (max-width: 360px) {
+    .overview-main-title {
+      font-size: 1rem;
+    }
+
+    .column-info-list li {
+      font-size: 0.75rem;
+    }
+
+    .column-badge {
+      font-size: 0.9rem;
+      height: 36px;
+
+      &.badge-left,
+      &.badge-right {
+        max-width: 200px;
+      }
+    }
+
+    .info-label {
+      width: 95px !important;
+    }
+  }
+}
