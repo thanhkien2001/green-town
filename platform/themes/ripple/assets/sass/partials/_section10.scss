@@ -158,6 +158,15 @@
     @media (max-width: 767px) {
         min-height: auto; // Tắt min-height trên mobile để không bị khoảng trắng
         
+        .s10-leaf-bg {
+            position: absolute;
+            right: -11%;
+            top: -35%;
+            width: 30%;
+            max-width: 350px;
+            min-width: 150px;
+        }
+
         .s10-heading {
             font-size: 30px;
             padding-top: 40px;
