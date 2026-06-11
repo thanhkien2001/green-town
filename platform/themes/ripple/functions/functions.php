@@ -683,3 +683,35 @@ theme_option()
             }, range(1, 5)))
         ],
     ]);
+
+    theme_option()->setSection([
+        'title'      => 'Landing Page: Section 7',
+        'desc'       => 'Cấu hình nội dung cho Section 7 (Mặt bằng)',
+        'id'         => 'opt-text-subsection-landing-page-s7',
+        'subsection' => true,
+        'icon'       => 'fas fa-map',
+        'fields'     => [
+            [
+                'id'         => 'ldp_s7_heading1',
+                'type'       => 'textarea',
+                'label'      => 'Tiêu đề lớn (Có thể dùng Enter để xuống dòng)',
+                'attributes' => [
+                    'name'    => 'ldp_s7_heading1',
+                    'value'   => "MẶT BẰNG TẦNG ĐIỂN HÌNH\nSOLENA BY GREEN TOWN",
+                    'options' => [
+                        'class' => 'form-control',
+                        'rows'  => 3,
+                    ],
+                ],
+            ],
+            [
+                'id'         => 'ldp_s7_img',
+                'type'       => 'mediaImage',
+                'label'      => 'Hình ảnh mặt bằng',
+                'attributes' => [
+                    'name'  => 'ldp_s7_img',
+                    'value' => null,
+                ],
+            ],
+        ],
+    ]);
