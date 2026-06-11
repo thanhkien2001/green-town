@@ -859,6 +859,15 @@ theme_option()
         'icon'       => 'fas fa-users',
         'fields'     => [
             [
+                'id'         => 'ldp_s12_background',
+                'type'       => 'mediaImage',
+                'label'      => 'Ảnh nền (Background Image)',
+                'attributes' => [
+                    'name'    => 'ldp_s12_background',
+                    'value'   => null,
+                ],
+            ],
+            [
                 'id'         => 'ldp_s12_heading',
                 'type'       => 'text',
                 'label'      => 'Tiêu đề (CHIA SẺ KHÁCH HÀNG)',

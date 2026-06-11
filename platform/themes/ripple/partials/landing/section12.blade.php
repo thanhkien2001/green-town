@@ -1,5 +1,10 @@
 @php
     $heading = theme_option('ldp_s12_heading', 'CHIA SẺ KHÁCH HÀNG');
+    $bgImage = theme_option('ldp_s12_background');
+    $bgStyle = '';
+    if ($bgImage) {
+        $bgStyle = 'background-image: url(' . RvMedia::getImageUrl($bgImage) . ');';
+    }
     
     // Parse the repeater data from theme options
     $themeTestimonials = theme_option('ldp_s12_testimonials');
@@ -53,7 +58,7 @@
     }
 @endphp
 
-<section class="section12-wrap">
+<section class="section12-wrap" style="{{ $bgStyle }}">
     <div class="s12-container">
         <h2 class="section12-title text-center">{{ $heading }}</h2>
         
