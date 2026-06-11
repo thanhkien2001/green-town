@@ -27,6 +27,9 @@
     {{-- SECTION 7 --}}
     {!! Theme::partial('landing.section7') !!}
 
+    {{-- SECTION 11 --}}
+    {!! Theme::partial('landing.section11') !!}
+
     <!-- SECTION 2: VIDEO TEASER -->
 
     <!-- SECTION 3: 3 ĐIỂM NỔI BẬT -->

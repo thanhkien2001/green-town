@@ -1,0 +1,90 @@
+.kia-section-11 {
+    background-color: #ffffff;
+    padding-bottom: 40px;
+}
+.s11-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+.s11-row-container {
+    padding: 30px 0;
+}
+.s11-separator {
+    width: 60%;
+    max-width: 700px;
+    margin: 0 auto;
+    border-top: 3px solid #5EA345;
+    opacity: 0.4;
+}
+.s11-row-title {
+    text-align: center;
+    color: #5EA345;
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+.s11-row-subtitle {
+    text-align: center;
+    color: #5EA345;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.s11-slider-wrapper {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+.s11-slide-img-wrap {
+    width: 100%;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+}
+
+.s11-slide-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.s11-slide-img-wrap:hover img {
+    transform: scale(1.05);
+}
+
+.s11-swiper-button-prev,
+.s11-swiper-button-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 36px;
+    background-color: #E6F3D8;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.s11-swiper-button-prev { left: 5px; }
+.s11-swiper-button-next { right: 5px; }
+
+@media (max-width: 768px) {
+    .s11-row-title { font-size: 20px; padding: 0 15px; }
+    .s11-row-subtitle { font-size: 14px; margin-bottom: 20px; }
+    .s11-row-container { padding: 20px 0; }
+    .s11-slider-wrapper { padding: 0 15px; }
+    .s11-swiper-button-prev, .s11-swiper-button-next { width: 32px; height: 32px; }
+    .s11-swiper-button-prev { left: 0px; }
+    .s11-swiper-button-next { right: 0px; }
+    .s11-swiper-button-prev svg, .s11-swiper-button-next svg { width: 18px; height: 18px; }
+    .s11-separator { width: 80%; }
+}
