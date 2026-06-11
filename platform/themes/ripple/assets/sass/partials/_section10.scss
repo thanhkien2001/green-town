@@ -1,0 +1,182 @@
+/* ============================================================
+   Section 10: Phương thức thanh toán
+   ============================================================ */
+
+.kia-section-10 {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+
+    .s10-leaf-bg {
+        position: absolute;
+        right: -5%;
+        top: -33%;
+        width: 30%;
+        max-width: 350px;
+        min-width: 150px;
+        height: 60%;
+        background-image: url('../images/la_2.png');
+        background-size: contain;
+        background-position: right top;
+        background-repeat: no-repeat;
+        z-index: 9999;
+        pointer-events: none;
+        transform: scaleX(-1) scaleY(-1); // Flip horizontally and vertically
+    }
+
+    .s10-container {
+        width: 100%;
+        padding-bottom: 80px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .s10-heading {
+        color: #5EA345;
+        font-size: 54px;
+        padding-top: 100px;
+        text-transform: uppercase;
+        line-height: 1.2;
+        text-align: center;
+        width: 100%;
+        margin: 0px;
+    }
+
+    .s10-slider-wrapper {
+        position: relative;
+        width: 100%;
+        // No padding so it spans full width
+    }
+
+    .s10-swiper {
+        width: 100%;
+        padding-bottom: 40px; // Space for pagination
+    }
+
+    .s10-slide-img-wrap {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: contain; // Prevent stretching/distortion
+            display: block;
+        }
+    }
+
+    // Swiper Pagination
+    .s10-swiper-pagination {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        z-index: 10;
+
+        .swiper-pagination-bullet {
+            width: 12px;
+            height: 12px;
+            background-color: #d1d1d1;
+            opacity: 1;
+            margin: 0 6px;
+            transition: all 0.3s ease;
+
+            &.swiper-pagination-bullet-active {
+                background-color: #5EA345;
+                width: 30px;
+                border-radius: 6px;
+            }
+        }
+    }
+
+    // Swiper Navigation
+    .s10-swiper-button-prev,
+    .s10-swiper-button-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #ffffff;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 10;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background-color: #5EA345;
+
+            svg stroke {
+                stroke: #ffffff;
+            }
+        }
+
+        svg {
+            stroke: #5EA345;
+            stroke-width: 2.5;
+            transition: stroke 0.3s ease;
+        }
+    }
+
+    .s10-swiper-button-prev {
+        left: 0;
+    }
+
+    .s10-swiper-button-next {
+        right: 0;
+    }
+
+    // Responsive: Tablet
+    @media (max-width: 991px) {
+        .s10-heading {
+            font-size: 40px;
+            padding-top: 60px;
+            margin-bottom: 30px;
+        }
+
+        .s10-slider-wrapper {
+            padding: 0;
+        }
+
+        .s10-swiper-button-prev,
+        .s10-swiper-button-next {
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    // Responsive: Mobile
+    @media (max-width: 767px) {
+        .s10-heading {
+            font-size: 30px;
+            padding-top: 40px;
+            margin-bottom: 20px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .s10-slider-wrapper {
+            padding: 0;
+        }
+
+        .s10-swiper-button-prev,
+        .s10-swiper-button-next {
+            display: none; // Hide arrows on mobile, let users swipe
+        }
+
+        .s10-swiper {
+            padding-bottom: 30px;
+        }
+    }
+}

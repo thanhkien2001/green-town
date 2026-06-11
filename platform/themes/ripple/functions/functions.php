@@ -715,3 +715,108 @@ theme_option()
             ],
         ],
     ]);
+
+    theme_option()->setSection([
+        'title'      => 'Landing Page: Section 9',
+        'desc'       => 'Cấu hình nội dung cho Section 9 (Pháp lý hoàn chỉnh)',
+        'id'         => 'opt-text-subsection-landing-page-s9',
+        'subsection' => true,
+        'icon'       => 'fas fa-balance-scale',
+        'fields'     => [
+            [
+                'id'         => 'ldp_s9_bg',
+                'type'       => 'mediaImage',
+                'label'      => 'Hình nền chính (Section 9)',
+                'attributes' => [
+                    'name'  => 'ldp_s9_bg',
+                    'value' => null,
+                ],
+            ],
+            [
+                'id'         => 'ldp_s9_heading',
+                'type'       => 'textarea',
+                'label'      => 'Tiêu đề (Có thể dùng Enter để xuống dòng)',
+                'attributes' => [
+                    'name'    => 'ldp_s9_heading',
+                    'value'   => "PHÁP LÝ HOÀN CHỈNH\nAN CƯ BỀN VỮNG",
+                    'options' => [
+                        'class' => 'form-control',
+                        'rows'  => 3,
+                    ],
+                ],
+            ],
+            [
+                'id'         => 'ldp_s9_btn_text',
+                'type'       => 'text',
+                'label'      => 'Chữ trên nút',
+                'attributes' => [
+                    'name'    => 'ldp_s9_btn_text',
+                    'value'   => 'XEM CHI TIẾT',
+                    'options' => [
+                        'class' => 'form-control',
+                    ],
+                ],
+            ],
+            [
+                'id'         => 'ldp_s9_btn_link',
+                'type'       => 'text',
+                'label'      => 'Link của nút',
+                'attributes' => [
+                    'name'    => 'ldp_s9_btn_link',
+                    'value'   => '#',
+                    'options' => [
+                        'class' => 'form-control',
+                    ],
+                ],
+            ],
+            [
+                'id'         => 'ldp_s9_kid_img',
+                'type'       => 'mediaImage',
+                'label'      => 'Hình em bé (Góc phải dưới)',
+                'attributes' => [
+                    'name'  => 'ldp_s9_kid_img',
+                    'value' => null,
+                ],
+            ],
+        ],
+    ]);
+
+    theme_option()->setSection([
+        'title'      => 'Landing Page: Section 10',
+        'desc'       => 'Cấu hình nội dung cho Section 10 (Phương thức thanh toán)',
+        'id'         => 'opt-text-subsection-landing-page-s10',
+        'subsection' => true,
+        'icon'       => 'fas fa-money-check-alt',
+        'fields'     => [
+            [
+                'id'         => 'ldp_s10_heading',
+                'type'       => 'text',
+                'label'      => 'Tiêu đề',
+                'attributes' => [
+                    'name'    => 'ldp_s10_heading',
+                    'value'   => 'PHƯƠNG THỨC THANH TOÁN',
+                    'options' => [
+                        'class' => 'form-control',
+                    ],
+                ],
+            ],
+            [
+                'id'         => 'ldp_s10_img_1',
+                'type'       => 'mediaImage',
+                'label'      => 'Hình ảnh phương thức thanh toán 1',
+                'attributes' => [
+                    'name'  => 'ldp_s10_img_1',
+                    'value' => null,
+                ],
+            ],
+            [
+                'id'         => 'ldp_s10_img_2',
+                'type'       => 'mediaImage',
+                'label'      => 'Hình ảnh phương thức thanh toán 2',
+                'attributes' => [
+                    'name'  => 'ldp_s10_img_2',
+                    'value' => null,
+                ],
+            ],
+        ],
+    ]);
