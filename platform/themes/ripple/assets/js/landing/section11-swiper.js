@@ -9,7 +9,7 @@ export default function initSection11Swiper() {
             new Swiper(swiperEl, {
                 slidesPerView: 1,
                 spaceBetween: 20,
-                loop: true,
+                loop: false,
                 navigation: {
                     nextEl: nextEl,
                     prevEl: prevEl,
