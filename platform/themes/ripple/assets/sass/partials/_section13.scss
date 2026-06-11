@@ -1,0 +1,97 @@
+.s13-wrap {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background-color: #4ba038; // Fallback green
+}
+
+.s13-image-container {
+    width: 100%;
+    position: relative;
+    
+    img.s13-bg-image {
+        width: 100%;
+        height: auto;
+        display: block;
+        min-height: 300px;
+        object-fit: cover;
+    }
+}
+
+.s13-form-overlay {
+    position: absolute;
+    top: 6.5%;     
+    right: 5%;     
+    width: 32%;    
+    height: auto;   
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: 768px) {
+        width: 80%;
+        left: 10%;
+        right: auto;
+        top: 15%;
+    }
+}
+
+.s13-contact-form {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7vw;
+    
+    @media (max-width: 768px) {
+        gap: 15px;
+    }
+}
+
+.s13-input {
+    width: 100%;
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4) !important;
+    color: #fff !important;
+    font-size: 1.5vw !important;
+    outline: none !important;
+    padding: 10px 0 !important;
+    box-shadow: none !important;
+    
+    &::placeholder {
+        color: rgba(255, 255, 255, 0.8) !important;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 14px !important;
+        padding: 5px 0 !important;
+    }
+}
+
+.s13-submit-btn {
+    width: 70%;
+    background: rgba(255, 255, 255, 0.4) !important;
+    border: 1px solid rgba(255, 255, 255, 0.6) !important;
+    border-radius: 50px !important;
+    color: #fff !important;
+    font-weight: bold !important;
+    font-size: 1.2vw !important;
+    padding: 12px 20px !important;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    align-self: flex-start;
+    margin-top: 1.5vw;
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.6) !important;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 12px !important;
+        padding: 8px 10px !important;
+        width: 100%;
+        margin-top: 15px;
+    }
+}

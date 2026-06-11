@@ -923,3 +923,22 @@ theme_option()
             ],
         ],
     ]);
+
+    theme_option()->setSection([
+        'title'      => 'Landing Page: Section 13',
+        'desc'       => 'Cấu hình ảnh nền nguyên khối cho Section 13',
+        'id'         => 'opt-text-subsection-landing-page-s13',
+        'subsection' => true,
+        'icon'       => 'fas fa-image',
+        'fields'     => [
+            [
+                'id'         => 'ldp_s13_bg',
+                'type'       => 'mediaImage',
+                'label'      => 'Ảnh nền toàn bộ Section 13 (Có sẵn thiết kế form)',
+                'attributes' => [
+                    'name'    => 'ldp_s13_bg',
+                    'value'   => null,
+                ],
+            ],
+        ],
+    ]);
