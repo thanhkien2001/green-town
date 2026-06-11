@@ -89,12 +89,12 @@
 
 /* Responsive */
 @media (max-width: 991px) {
-    .ldp-footer-container {
+    .ldp-footer {
         flex-direction: column;
+        gap: 20px;
     }
     .ldp-footer-col {
         width: 100%;
-        margin-bottom: 30px;
     }
     .ldp-footer-title {
         font-size: 28px !important;
@@ -110,7 +110,8 @@
 
 @media (max-width: 768px) {
     .ldp-footer {
-        padding: 40px 0;
+        padding-top: 40px;
+        padding-bottom: 40px;
     }
     .ldp-footer-title {
         font-size: 24px !important;
@@ -122,5 +123,8 @@
         width: 45px;
         height: 45px;
         font-size: 20px;
+    }
+    .ldp-footer-logo-col .ldp-footer-logo {
+        max-width: 180px;
     }
 }
