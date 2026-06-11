@@ -37,6 +37,20 @@
     {{-- SECTION 7 --}}
     {!! Theme::partial('landing.section7') !!}
 
+    {{-- SECTION 9 --}}
+    {!! Theme::partial('landing.section9') !!}
+
+    {{-- SECTION 10 --}}
+    {!! Theme::partial('landing.section10') !!}
+    {{-- SECTION 11 --}}
+    {!! Theme::partial('landing.section11') !!}
+
+    {{-- SECTION 12 --}}
+    {!! Theme::partial('landing.section12') !!}
+
+    {{-- SECTION 13 --}}
+    {!! Theme::partial('landing.section13') !!}
+
     <!-- SECTION 2: VIDEO TEASER -->
 
     <!-- SECTION 3: 3 ĐIỂM NỔI BẬT -->

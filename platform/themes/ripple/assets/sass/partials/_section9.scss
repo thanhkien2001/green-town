@@ -1,0 +1,178 @@
+/* ============================================================
+   Section 9: Pháp lý hoàn chỉnh
+   ============================================================ */
+
+.kia-section-9 {
+    width: 100%;
+    position: relative;
+    background-size: cover;
+    background-position: center top; // Hiển thị từ trên xuống để không cắt chữ ở đỉnh
+    background-repeat: no-repeat;
+    min-height: 100vh; // Full màn hình
+    display: flex;
+    align-items: flex-end; // Align items to the bottom
+    overflow: hidden; // Prevent kid image from breaking layout if it overlaps
+
+    .s9-container {
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
+        height: 100%;
+    }
+
+    .s9-left-block {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        background-image: url('../images/section9-left.png');
+        background-size: cover;
+        background-position: left bottom;
+        background-repeat: no-repeat;
+        clip-path: none;
+        z-index: 10;
+        max-width: none;
+
+        // Căn chỉnh nội dung text đè lên ảnh
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+        padding-bottom: 65px; // Giảm padding để đẩy chữ xuống thấp hơn
+        padding-left: 80px;
+    }
+
+    .s9-heading {
+        font-size: 56px;
+        color: #DFEE5D;
+        line-height: 1.2;
+        margin: 0 0 30px 0;
+        text-transform: uppercase;
+    }
+
+    .s9-btn {
+        display: inline-block;
+        background-color: #5EA146;
+        color: #ffffff;
+        font-size: 40px;
+        padding: 15px 35px;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+
+        &:hover {
+            background-color: darken(#5EA146, 10%);
+            transform: translateY(-3px);
+            color: #ffffff;
+        }
+    }
+
+    .s9-kid-wrapper {
+        position: absolute;
+        bottom: 0;
+        right: 0; // Sát góc phải
+        z-index: 15; // Đưa lên trên khối left overlay để không bị che mất (nếu hình trái tràn qua)
+        width: 35%;
+        max-width: 450px;
+
+        .s9-kid-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            // mix-blend-mode: multiply; // uncomment if the JPG needs white bg removed
+        }
+    }
+
+    // Responsive: Desktop Smaller
+    @media (max-width: 1400px) {
+        min-height: 650px;
+
+        .s9-container {
+            min-height: 650px;
+        }
+
+        .s9-left-block {
+            padding: 50px 100px 50px 40px;
+            max-width: 700px;
+        }
+
+        .s9-heading {
+            font-size: 46px;
+        }
+
+        .s9-btn {
+            font-size: 32px;
+            padding: 12px 28px;
+        }
+    }
+
+    // Responsive: Tablet
+    @media (max-width: 991px) {
+        min-height: 500px;
+
+        .s9-container {
+            min-height: 500px;
+        }
+
+        .s9-left-block {
+            padding: 40px 80px 40px 30px;
+            max-width: 550px;
+            clip-path: polygon(0 0, 100% 0, 90% 100%, 0 100%);
+        }
+
+        .s9-heading {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .s9-btn {
+            font-size: 24px;
+            padding: 10px 20px;
+        }
+
+        .s9-kid-wrapper {
+            width: 40%;
+            right: 0;
+        }
+    }
+
+    // Responsive: Mobile
+    @media (max-width: 767px) {
+        min-height: 600px;
+
+        .s9-container {
+            min-height: 600px;
+        }
+
+        .s9-left-block {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: auto 57%; // Thu nhỏ hình nền lại một tí trên mobile
+            padding-bottom: 20px; // Giảm lề dưới cho khớp hình nhỏ
+            padding-left: 28px; // Rút lề trái về để không bị đẩy ra khỏi hình
+            padding-right: 20px;
+            align-items: flex-start;
+            text-align: left;
+            margin-top: 0;
+        }
+
+        .s9-heading {
+            font-size: 22px; // Chữ nhỏ lại để vừa với hình
+            margin-bottom: 15px;
+        }
+
+        .s9-btn {
+            font-size: 16px; // Nút nhỏ lại một chút
+            padding: 8px 16px;
+        }
+
+        .s9-kid-wrapper {
+            display: none; // Ẩn bé gái trên mobile
+        }
+    }
+}
