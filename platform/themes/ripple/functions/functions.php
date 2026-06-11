@@ -232,142 +232,98 @@ theme_option()
                 ],
             ],
         ],
-    ]);
+    ])
 
-    // // Section 3
-    // ->setSection([
-    //     'title'      => 'Landing Page: S3 Highlights',
-    //     'desc'       => 'Cấu hình Section 3',
-    //     'priority'   => 12,
-    //     'id'         => 'opt-section-landing-s3',
-    //     'subsection' => true,
-    //     'icon'       => 'fa fa-star',
-    //     'fields'     => [
-    //         [
-    //             'id'         => 'ldp_s3_bg',
-    //             'type'       => 'mediaImage',
-    //             'label'      => 'Background Desktop (Section 3)',
-    //             'attributes' => [
-    //                 'name'  => 'ldp_s3_bg',
-    //                 'value' => null,
-    //             ],
-    //         ],
-    //         [
-    //             'id'         => 'ldp_s3_bg_mb',
-    //             'type'       => 'mediaImage',
-    //             'label'      => 'Background Mobile (Section 3)',
-    //             'attributes' => [
-    //                 'name'  => 'ldp_s3_bg_mb',
-    //                 'value' => null,
-    //             ],
-    //         ],
-    //         [
-    //             'id'         => 'ldp_s3_f1_img',
-    //             'type'       => 'mediaImage',
-    //             'label'      => 'Feature 1: Hình ảnh',
-    //             'attributes' => [
-    //                 'name'  => 'ldp_s3_f1_img',
-    //                 'value' => null,
-    //             ],
-    //         ],
-    //         [
-    //             'id'         => 'ldp_s3_f1_title',
-    //             'type'       => 'text',
-    //             'label'      => 'Feature 1: Tiêu đề',
-    //             'attributes' => [
-    //                 'name'    => 'ldp_s3_f1_title',
-    //                 'value'   => null,
-    //                 'options' => [
-    //                     'class'       => 'form-control',
-    //                     'placeholder' => 'Ngôn Ngữ nhận diện Star-map',
-    //                 ],
-    //             ],
-    //         ],
-    //         [
-    //             'id'         => 'ldp_s3_f1_desc',
-    //             'type'       => 'text',
-    //             'label'      => 'Feature 1: Mô tả',
-    //             'attributes' => [
-    //                 'name'    => 'ldp_s3_f1_desc',
-    //                 'value'   => null,
-    //                 'options' => [
-    //                     'class'       => 'form-control',
-    //                     'placeholder' => 'DNA Thiết Kế SUV Kia',
-    //                 ],
-    //             ],
-    //         ],
-    //         [
-    //             'id'         => 'ldp_s3_f2_img',
-    //             'type'       => 'mediaImage',
-    //             'label'      => 'Feature 2 (Center): Hình ảnh',
-    //             'attributes' => [
-    //                 'name'  => 'ldp_s3_f2_img',
-    //                 'value' => null,
-    //             ],
-    //         ],
-    //         [
-    //             'id'         => 'ldp_s3_f2_title',
-    //             'type'       => 'text',
-    //             'label'      => 'Feature 2 (Center): Tiêu đề',
-    //             'attributes' => [
-    //                 'name'    => 'ldp_s3_f2_title',
-    //                 'value'   => null,
-    //                 'options' => [
-    //                     'class'       => 'form-control',
-    //                     'placeholder' => 'Không gian nội thất',
-    //                 ],
-    //             ],
-    //         ],
-    //         [
-    //             'id'         => 'ldp_s3_f2_desc',
-    //             'type'       => 'text',
-    //             'label'      => 'Feature 2 (Center): Mô tả',
-    //             'attributes' => [
-    //                 'name'    => 'ldp_s3_f2_desc',
-    //                 'value'   => null,
-    //                 'options' => [
-    //                     'class'       => 'form-control',
-    //                     'placeholder' => 'đầy cảm hứng',
-    //                 ],
-    //             ],
-    //         ],
-    //         [
-    //             'id'         => 'ldp_s3_f3_img',
-    //             'type'       => 'mediaImage',
-    //             'label'      => 'Feature 3: Hình ảnh',
-    //             'attributes' => [
-    //                 'name'  => 'ldp_s3_f3_img',
-    //                 'value' => null,
-    //             ],
-    //         ],
-    //         [
-    //             'id'         => 'ldp_s3_f3_title',
-    //             'type'       => 'text',
-    //             'label'      => 'Feature 3: Tiêu đề',
-    //             'attributes' => [
-    //                 'name'    => 'ldp_s3_f3_title',
-    //                 'value'   => null,
-    //                 'options' => [
-    //                     'class'       => 'form-control',
-    //                     'placeholder' => 'Công nghệ Hybrid cao cấp',
-    //                 ],
-    //             ],
-    //         ],
-    //         [
-    //             'id'         => 'ldp_s3_f3_desc',
-    //             'type'       => 'text',
-    //             'label'      => 'Feature 3: Mô tả',
-    //             'attributes' => [
-    //                 'name'    => 'ldp_s3_f3_desc',
-    //                 'value'   => null,
-    //                 'options' => [
-    //                     'class'       => 'form-control',
-    //                     'placeholder' => 'vận hành mạnh mẽ, êm ái',
-    //                 ],
-    //             ],
-    //         ],
-    //     ],
-    // ])
+    // Section 3: Vị trí & Kết nối
+    ->setSection([
+        'title'      => 'Landing Page: S3 Location',
+        'desc'       => 'Cấu hình Section 3 (Vị trí & Kết nối)',
+        'priority'   => 12,
+        'id'         => 'opt-section-landing-s3',
+        'subsection' => true,
+        'icon'       => 'fa fa-map-marker',
+        'fields'     => [
+            [
+                'id'         => 'ldp_s3_bg',
+                'type'       => 'mediaImage',
+                'label'      => 'Ảnh nền Section 3 (Desktop)',
+                'attributes' => [
+                    'name'  => 'ldp_s3_bg',
+                    'value' => null,
+                ],
+            ],
+            [
+                'id'         => 'ldp_s3_bg_mb',
+                'type'       => 'mediaImage',
+                'label'      => 'Ảnh nền Section 3 (Mobile)',
+                'attributes' => [
+                    'name'  => 'ldp_s3_bg_mb',
+                    'value' => null,
+                ],
+            ],
+            [
+                'id'         => 'ldp_s3_left_title1',
+                'type'       => 'text',
+                'label'      => 'Cột Trái: Tiêu đề 1 (Màu vàng)',
+                'attributes' => [
+                    'name'    => 'ldp_s3_left_title1',
+                    'value'   => 'KHU ĐÔ THỊ VĨNH LỘC QUY MÔ 110HA',
+                    'options' => [
+                        'class' => 'form-control',
+                    ],
+                ],
+            ],
+            [
+                'id'         => 'ldp_s3_left_title2',
+                'type'       => 'text',
+                'label'      => 'Cột Trái: Tiêu đề 2 (Màu trắng)',
+                'attributes' => [
+                    'name'    => 'ldp_s3_left_title2',
+                    'value'   => 'KHU ĐÔ THỊ KIỂU MẪU - "PHÚ MỸ HƯNG THỨ 2" TẠI KHU TÂY TP.HCM',
+                    'options' => [
+                        'class' => 'form-control',
+                    ],
+                ],
+            ],
+            [
+                'id'         => 'ldp_s3_left_desc',
+                'type'       => 'textarea',
+                'label'      => 'Cột Trái: Mô tả',
+                'attributes' => [
+                    'name'    => 'ldp_s3_left_desc',
+                    'value'   => 'Khu đô thị Vĩnh Lộc là một trong những khu đô thị quy mô lớn đầu tiên tại khu Tây TP.HCM. Dự án được quy hoạch đồng bộ trên diện tích khoảng 110 ha với mục tiêu hình thành một khu đô thị hoàn chỉnh gồm nhà ở, thương mại, giáo dục, y tế, công viên và hạ tầng kỹ thuật.',
+                    'options' => [
+                        'class' => 'form-control',
+                        'rows'  => 4,
+                    ],
+                ],
+            ],
+            [
+                'id'         => 'ldp_s3_right_title1',
+                'type'       => 'text',
+                'label'      => 'Cột Phải: Tiêu đề 1 (Màu trắng lớn)',
+                'attributes' => [
+                    'name'    => 'ldp_s3_right_title1',
+                    'value'   => 'GREEN TOWN BÌNH TÂN',
+                    'options' => [
+                        'class' => 'form-control',
+                    ],
+                ],
+            ],
+            [
+                'id'         => 'ldp_s3_right_title2',
+                'type'       => 'text',
+                'label'      => 'Cột Phải: Tiêu đề 2 (Màu trắng nhỏ)',
+                'attributes' => [
+                    'name'    => 'ldp_s3_right_title2',
+                    'value'   => 'LANDMARK DÂN CƯ CỦA KHU ĐÔ THỊ VĨNH LỘC',
+                    'options' => [
+                        'class' => 'form-control',
+                    ],
+                ],
+            ],
+        ],
+    ]);
 
     // // Section 4
     // ->setSection([

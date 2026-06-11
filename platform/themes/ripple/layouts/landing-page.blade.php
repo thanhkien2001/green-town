@@ -22,6 +22,8 @@
 
     <!-- SECTION 2: OVERVIEW -->
     {!! Theme::partial('landing.section2') !!}
+    <!-- SECTION 3: VỊ TRÍ & KẾT NỐI -->
+    {!! Theme::partial('landing.section3') !!}
     {{-- SECTION 5 --}}
     {!! Theme::partial('landing.section5') !!}
 

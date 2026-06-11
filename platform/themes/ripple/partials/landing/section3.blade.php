@@ -1,46 +1,34 @@
-<!-- SECTION 3: 3 ĐIỂM NỔI BẬT -->
+<!-- SECTION 3: VỊ TRÍ & KẾT NỐI -->
 @php
-    $f1Img   = theme_option('ldp_s3_f1_img') ? RvMedia::getImageUrl(theme_option('ldp_s3_f1_img')) : '';
-    $f1Title = theme_option('ldp_s3_f1_title') ?: 'Ngôn Ngữ nhận diện Star-map';
-    $f1Desc  = theme_option('ldp_s3_f1_desc') ?: 'DNA Thiết Kế SUV Kia';
-
-    $f2Img   = theme_option('ldp_s3_f2_img') ? RvMedia::getImageUrl(theme_option('ldp_s3_f2_img')) : Theme::asset()->url('images/6919a0a134de4923b37b1ae474820a2e6e8c996c.png');
-    $f2Title = theme_option('ldp_s3_f2_title') ?: 'Không gian nội thất';
-    $f2Desc  = theme_option('ldp_s3_f2_desc') ?: 'đầy cảm hứng';
-
-    $f3Img   = theme_option('ldp_s3_f3_img') ? RvMedia::getImageUrl(theme_option('ldp_s3_f3_img')) : '';
-    $f3Title = theme_option('ldp_s3_f3_title') ?: 'Công nghệ Hybrid cao cấp';
-    $f3Desc  = theme_option('ldp_s3_f3_desc') ?: 'vận hành mạnh mẽ, êm ái';
-
-    // Cấu hình ảnh nền chính (Base Background) qua Theme Option
-    $bgBaseRaw = theme_option('ldp_s3_bg');
-    if (!empty($bgBaseRaw)) {
-        if (filter_var($bgBaseRaw, FILTER_VALIDATE_URL) || str_starts_with($bgBaseRaw, '/') || str_contains($bgBaseRaw, 'storage/')) {
-            $bgBase = $bgBaseRaw;
+    // Cấu hình ảnh nền chính (Desktop)
+    $bgImageRaw = theme_option('ldp_s3_bg');
+    if (!empty($bgImageRaw)) {
+        if (filter_var($bgImageRaw, FILTER_VALIDATE_URL) || str_starts_with($bgImageRaw, '/') || str_contains($bgImageRaw, 'storage/')) {
+            $bgImage = $bgImageRaw;
         } else {
-            $bgBase = RvMedia::getImageUrl($bgBaseRaw);
+            $bgImage = RvMedia::getImageUrl($bgImageRaw);
         }
     } else {
-        $bgBase = Theme::asset()->url('images/2012_405.svg');
+        $bgImage = asset('themes/ripple/images/section3.webp');
     }
 
-    // Đọc ảnh nền mobile của Section 3
-    $s3BgMb = theme_option('ldp_s3_bg_mb');
-    if (!empty($s3BgMb)) {
-        if (filter_var($s3BgMb, FILTER_VALIDATE_URL) || str_starts_with($s3BgMb, '/') || str_contains($s3BgMb, 'storage/')) {
-            $bgMobile = $s3BgMb;
+    // Cấu hình ảnh nền Mobile
+    $bgMobileRaw = theme_option('ldp_s3_bg_mb');
+    if (!empty($bgMobileRaw)) {
+        if (filter_var($bgMobileRaw, FILTER_VALIDATE_URL) || str_starts_with($bgMobileRaw, '/') || str_contains($bgMobileRaw, 'storage/')) {
+            $bgMobile = $bgMobileRaw;
         } else {
-            $bgMobile = RvMedia::getImageUrl($s3BgMb);
+            $bgMobile = RvMedia::getImageUrl($bgMobileRaw);
         }
     } else {
-        $bgMobile = $bgBase;
+        $bgMobile = $bgImage;
     }
 
-    // Lọc sạch URL cho môi trường ngrok / điện thoại di động thật
-    if (str_contains($bgBase, '/storage/')) {
-        $bgBase = strstr($bgBase, '/storage/');
-    } elseif (str_contains($bgBase, '/themes/')) {
-        $bgBase = strstr($bgBase, '/themes/');
+    // Lọc URL cho ngrok / thiết bị di động
+    if (str_contains($bgImage, '/storage/')) {
+        $bgImage = strstr($bgImage, '/storage/');
+    } elseif (str_contains($bgImage, '/themes/')) {
+        $bgImage = strstr($bgImage, '/themes/');
     }
 
     if (str_contains($bgMobile, '/storage/')) {
@@ -48,60 +36,45 @@
     } elseif (str_contains($bgMobile, '/themes/')) {
         $bgMobile = strstr($bgMobile, '/themes/');
     }
+
+    // Lấy thông tin text cột trái
+    $leftTitle1 = theme_option('ldp_s3_left_title1') ?: 'KHU ĐÔ THỊ VĨNH LỘC QUY MÔ 110HA';
+    $leftTitle2 = theme_option('ldp_s3_left_title2') ?: 'KHU ĐÔ THỊ KIỂU MẪU - "PHÚ MỸ HƯNG THỨ 2" TẠI KHU TÂY TP.HCM';
+    $leftDesc = theme_option('ldp_s3_left_desc') ?: 'Khu đô thị Vĩnh Lộc là một trong những khu đô thị quy mô lớn đầu tiên tại khu Tây TP.HCM. Dự án được quy hoạch đồng bộ trên diện tích khoảng 110 ha với mục tiêu hình thành một khu đô thị hoàn chỉnh gồm nhà ở, thương mại, giáo dục, y tế, công viên và hạ tầng kỹ thuật.';
+
+    // Lấy thông tin text cột phải
+    $rightTitle1 = theme_option('ldp_s3_right_title1') ?: 'GREEN TOWN BÌNH TÂN';
+    $rightTitle2 = theme_option('ldp_s3_right_title2') ?: 'LANDMARK DÂN CƯ CỦA KHU ĐÔ THỊ VĨNH LỘC';
 @endphp
 
-<section id="section-highlights" class="kia-section-highlights">
-  <!-- Background Layers sử dụng thẻ picture responsive chuẩn HTML5 -->
-  <div class="background-layers">
-    <div class="merged-bg-container">
-      <picture class="bg-picture-wrapper">
-        <source media="(max-width: 768px)" srcset="{{ $bgMobile }}" />
-        <img
-          src="{{ $bgBase }}"
-          class="bg-layer layer-base"
-          alt="Background Base"
-        />
-      </picture>
+<section id="section-location" class="location-section">
+    <!-- Background Layers -->
+    <div class="background-layers">
+        <picture class="bg-picture-wrapper">
+            <source media="(max-width: 768px)" srcset="{{ $bgMobile }}" />
+            <img src="{{ $bgImage }}" class="bg-layer layer-base" alt="Background Location" />
+        </picture>
+        <!-- Layer 2: Khối hình xanh lá cây góc trái từ ảnh 1920x1080 trong suốt -->
+        <img src="{{ asset('themes/ripple/images/Clip_s3.png') }}" class="bg-layer layer-clip" alt="Clip Overlay" />
     </div>
-  </div>
 
-  <div class="content-container">
-    <!-- Features Top Section -->
-    <div class="features-top">
-      
-      <!-- Cột 1 -->
-      <div class="feature-col highlight-card-zoom js-reveal">
-        @if ($f1Img)
-          <div class="car-interior-img">
-            <img src="{{ $f1Img }}" class="zoom-image" alt="{{ $f1Title }}" />
-          </div>
-        @endif
-        <h3 class="feature-title">{{ $f1Title }}</h3>
-        <p class="feature-desc">{{ $f1Desc }}</p>
-      </div>
+    <!-- Layout Container (Align bottom) -->
+    <div class="location-container">
+        <!-- Cột Trái: Panel màu xanh lá cắt xéo -->
+        <div class="location-left-panel js-reveal">
+            <div class="panel-content">
+                <h3 class="left-title-1 font-selecta-black">{!! $leftTitle1 !!}</h3>
+                <h4 class="left-title-2 font-selecta-bold">{!! $leftTitle2 !!}</h4>
+                <p class="left-desc font-montserrat-regular">{!! nl2br(e($leftDesc)) !!}</p>
+            </div>
+        </div>
 
-      <!-- Cột 2 -->
-      <div class="feature-col center-col highlight-card-zoom js-reveal">
-        @if ($f2Img)
-          <div class="car-interior-img">
-            <img src="{{ $f2Img }}" class="zoom-image" alt="{{ $f2Title }}" />
-          </div>
-        @endif
-        <h3 class="feature-title">{{ $f2Title }}</h3>
-        <p class="feature-desc">{{ $f2Desc }}</p>
-      </div>
-
-      <!-- Cột 3 -->
-      <div class="feature-col highlight-card-zoom js-reveal">
-        @if ($f3Img)
-          <div class="car-interior-img">
-            <img src="{{ $f3Img }}" class="zoom-image" alt="{{ $f3Title }}" />
-          </div>
-        @endif
-        <h3 class="feature-title">{{ $f3Title }}</h3>
-        <p class="feature-desc">{{ $f3Desc }}</p>
-      </div>
-
+        <!-- Cột Phải: Khối chữ có vạch dọc màu vàng -->
+        <div class="location-right-panel js-reveal" style="transition-delay: 200ms;">
+            <div class="right-bordered-content">
+                <h3 class="right-title-1 font-selecta-black">{!! $rightTitle1 !!}</h3>
+                <h4 class="right-title-2 font-selecta-medium">{!! $rightTitle2 !!}</h4>
+            </div>
+        </div>
     </div>
-  </div>
 </section>

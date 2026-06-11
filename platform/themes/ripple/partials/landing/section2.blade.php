@@ -70,11 +70,11 @@
 <section id="section-overview" class="overview-section" style="background-image: url('{{ $bgImage }}');">
     <div class="overview-container">
         <!-- Tiêu đề chính -->
-        <h2 class="overview-main-title font-selecta-black">{{ $s2Title }}</h2>
+        <h2 class="overview-main-title font-selecta-black js-reveal">{{ $s2Title }}</h2>
 
         <div class="overview-grid">
             <!-- Cột 1: SOLENA (Bên trái) -->
-            <div class="overview-column overview-column-left">
+            <div class="overview-column overview-column-left js-reveal" style="transition-delay: 150ms;">
                 <div class="column-badge badge-left font-selecta-bold">{{ $col1Title }}</div>
                 <ul class="column-info-list">
                     @foreach($col1Items as $item)
@@ -98,7 +98,7 @@
             </div>
 
             <!-- Cột 2: GREEN TOWN BÌNH TÂN (Bên phải) -->
-            <div class="overview-column overview-column-right">
+            <div class="overview-column overview-column-right js-reveal" style="transition-delay: 300ms;">
                 <div class="column-badge badge-right font-selecta-bold">{{ $col2Title }}</div>
                 <ul class="column-info-list">
                     @foreach($col2Items as $item)

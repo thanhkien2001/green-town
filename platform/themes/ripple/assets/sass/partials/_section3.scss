@@ -1,0 +1,430 @@
+.location-section {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: stretch;
+
+  // Lớp phủ gradient mờ nhẹ phía trên để làm dịu bản đồ nếu cần
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.2) 100%);
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  // ─── Background ────────────────────────────────────────────────────────────
+  .background-layers {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    .bg-picture-wrapper {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .bg-layer {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      position: absolute;
+      inset: 0;
+    }
+
+    .layer-base {
+      z-index: 1;
+    }
+
+    .layer-clip {
+      z-index: 2;
+      pointer-events: none;
+    }
+  }
+
+  // ─── Container chính ───────────────────────────────────────────────────────
+  .location-container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 100%;
+    pointer-events: none; // Cho phép tương tác xuyên qua container
+  }
+
+  // ─── Cột Trái: Panel trong suốt nhận text (ảnh Clip_s3.png làm nền góc) ─────
+  .location-left-panel {
+    width: 60vw; // Tăng độ rộng để text hiển thị trọn vẹn 1 dòng
+    min-height: 250px;
+    padding: 50px 120px 45px 80px; // Padding phải lớn để tránh chữ đè lên góc xiên
+    box-sizing: border-box;
+    pointer-events: auto; // Nhận click bình thường
+    display: flex;
+    align-items: center;
+
+    .panel-content {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .left-title-1 {
+      color: #DFEE5D; // Màu vàng chanh nổi bật
+      font-size: 3.5rem;
+      line-height: 1.15;
+      text-transform: uppercase;
+      margin: 0;
+      letter-spacing: 0.5px;
+      white-space: nowrap; // Đảm bảo luôn nằm trên 1 dòng
+    }
+
+    .left-title-2 {
+      color: #ffffff;
+      font-size: 1.875rem;
+      line-height: 1.25;
+      text-transform: uppercase;
+      margin: 0;
+      white-space: nowrap; // Đảm bảo luôn nằm trên 1 dòng
+    }
+
+    .left-desc {
+      color: #ffffff;
+      font-size: 1.25rem;
+      line-height: 1.6;
+      margin: 8px 0 0 0;
+      opacity: 0.9;
+      max-width: 800px; // Luôn nằm gọn trong phần xiên xanh lá của Clip_s3.png
+    }
+  }
+
+  // ─── Cột Phải: Khối chữ vạch dọc màu vàng ─────────────────────────────────
+  .location-right-panel {
+    margin-right: 80px;
+    margin-bottom: 60px;
+    pointer-events: auto;
+    max-width: none; // Hủy giới hạn chiều rộng
+    width: fit-content; // Tự động co giãn theo độ dài dòng chữ
+    box-sizing: border-box;
+
+    .right-bordered-content {
+      border-left: 3px solid #DFEE5D; // Vạch dọc màu vàng chanh
+      padding-left: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    }
+
+    .right-title-1 {
+      color: #ffffff;
+      font-size: 2.5rem;
+      line-height: 1.1;
+      text-transform: uppercase;
+      margin: 0;
+      letter-spacing: 0.5px;
+      white-space: nowrap; // Đảm bảo luôn nằm trên 1 dòng
+    }
+
+    .right-title-2 {
+      color: #ffffff;
+      font-size: 1.7rem;
+      line-height: 1.25;
+      text-transform: uppercase;
+      margin: 0;
+      opacity: 0.95;
+      white-space: nowrap; // Đảm bảo luôn nằm trên 1 dòng
+    }
+  }
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // RESPONSIVE DESIGN
+  // ─────────────────────────────────────────────────────────────────────────────
+
+  // ─── ≤ 1440px: Laptop lớn ──────────────────────────────────────────────────
+  @media (max-width: 1440px) {
+    .location-left-panel {
+      width: 53vw;
+      padding: 40px 100px 35px 60px;
+
+      .left-title-1 {
+        font-size: 1.8rem;
+      }
+
+      .left-title-2 {
+        font-size: 1.1rem;
+      }
+
+      .left-desc {
+        font-size: 0.9rem;
+        max-width: 650px; // Điều chỉnh chiều rộng theo tỉ lệ màn hình laptop lớn
+      }
+    }
+
+    .location-right-panel {
+      margin-right: 60px;
+      margin-bottom: 50px;
+
+      .right-title-1 {
+        font-size: 1.85rem;
+      }
+
+      .right-title-2 {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  // ─── ≤ 1280px: Laptop nhỏ / Máy tính bảng lớn ──────────────────────────────
+  @media (max-width: 1280px) {
+    .location-left-panel {
+      width: 56vw;
+      padding: 35px 80px 30px 50px;
+
+      .left-title-1 {
+        font-size: 1.55rem;
+      }
+
+      .left-title-2 {
+        font-size: 1rem;
+      }
+
+      .left-desc {
+        font-size: 0.85rem;
+        line-height: 1.55;
+        max-width: 580px; // Điều chỉnh chiều rộng theo tỉ lệ màn hình laptop nhỏ
+      }
+    }
+
+    .location-right-panel {
+      margin-right: 50px;
+      margin-bottom: 40px;
+
+      .right-title-1 {
+        font-size: 1.6rem;
+      }
+
+      .right-title-2 {
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  // ─── ≤ 1024px: Màn hình máy tính bảng ngang ───────────────────────────────
+  @media (max-width: 1024px) {
+    .location-left-panel {
+      width: 58vw;
+      padding: 25px 60px 25px 40px;
+
+      .left-title-1 {
+        font-size: 1.35rem;
+      }
+
+      .left-title-2 {
+        font-size: 0.9rem;
+      }
+
+      .left-desc {
+        font-size: 0.8rem;
+        margin-top: 4px;
+        max-width: 480px; // Điều chỉnh chiều rộng theo tỉ lệ màn hình máy tính bảng
+      }
+    }
+
+    .location-right-panel {
+      margin-right: 40px;
+      margin-bottom: 30px;
+
+      .right-title-1 {
+        font-size: 1.35rem;
+      }
+
+      .right-title-2 {
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+  // ─── ≤ 768px: Mobile & Máy tính bảng đứng ─────────────────────────────────
+  @media (max-width: 768px) {
+    height: auto;
+    min-height: 100vh;
+    flex-direction: column;
+    align-items: stretch;
+
+    &::before {
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.3) 60%, rgba(0, 0, 0, 0.5) 100%);
+      z-index: 2;
+    }
+
+    // Ảnh bản đồ bao phủ toàn bộ background, giống như Section 2
+    .background-layers {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+
+      .bg-picture-wrapper {
+        width: 100%;
+        height: 100%;
+      }
+
+      .bg-layer {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 42% center; // Dịch nhẹ tiêu điểm sang khu vực trung tâm Bình Tân
+      }
+
+      .layer-clip {
+        display: none; // Ẩn ảnh xiên góc trên mobile để tránh che khuất bản đồ
+      }
+    }
+
+    // Container text nằm đè lên trên nền bản đồ (căn sát dưới)
+    .location-container {
+      position: relative;
+      z-index: 3;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: stretch;
+      width: 100%;
+      padding: 90px 20px 30px 20px;
+      box-sizing: border-box;
+      pointer-events: auto;
+    }
+
+    // Khối trái: Nền xanh lá cây bán trong suốt với hiệu ứng kính mờ (Glassmorphism)
+    .location-left-panel {
+      width: 100%;
+      clip-path: none;
+      padding: 24px 20px;
+      min-height: auto;
+      background-color: rgba(23, 77, 31, 0.9); // Xanh lục đậm bán trong suốt
+      backdrop-filter: blur(8px); // Kính mờ sang trọng
+      -webkit-backdrop-filter: blur(8px);
+      border-radius: 8px;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+
+      .panel-content {
+        gap: 8px;
+      }
+
+      .left-title-1 {
+        font-size: 1.5rem;
+        white-space: normal; // Khôi phục xuống dòng tự nhiên trên mobile
+      }
+
+      .left-title-2 {
+        font-size: 1.05rem;
+        white-space: normal; // Khôi phục xuống dòng tự nhiên trên mobile
+      }
+
+      .left-desc {
+        font-size: 0.85rem;
+        line-height: 1.5;
+        margin-top: 4px;
+        max-width: none; // Hủy giới hạn chiều rộng trên mobile
+      }
+    }
+
+    // Khối phải: Nền xanh đậm hơn bán trong suốt với hiệu ứng kính mờ
+    .location-right-panel {
+      width: 100%;
+      margin: 0;
+      background-color: rgba(18, 61, 25, 0.9); // Xanh lục đậm hơn bán trong suốt
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+      max-width: none;
+
+      .right-bordered-content {
+        border-left-width: 3px;
+        padding-left: 16px;
+        text-shadow: none;
+      }
+
+      .right-title-1 {
+        font-size: 1.5rem;
+        white-space: normal; // Khôi phục xuống dòng tự nhiên trên mobile
+      }
+
+      .right-title-2 {
+        font-size: 0.95rem;
+        white-space: normal; // Khôi phục xuống dòng tự nhiên trên mobile
+      }
+    }
+  }
+
+  // ─── ≤ 480px: Điện thoại di động nhỏ ──────────────────────────────────────
+  @media (max-width: 480px) {
+    .location-container {
+      padding: 70px 16px 20px 16px;
+    }
+
+    .location-left-panel {
+      padding: 20px 16px;
+      margin-bottom: 12px;
+
+      .left-title-1 {
+        font-size: 1.3rem;
+      }
+
+      .left-title-2 {
+        font-size: 0.95rem;
+      }
+
+      .left-desc {
+        font-size: 0.8rem;
+      }
+    }
+
+    .location-right-panel {
+      padding: 16px;
+
+      .right-title-1 {
+        font-size: 1.3rem;
+      }
+
+      .right-title-2 {
+        font-size: 0.85rem;
+      }
+    }
+  }
+
+  // ─── ≤ 360px: Điện thoại siêu nhỏ ──────────────────────────────────────────
+  @media (max-width: 360px) {
+    .location-left-panel {
+      .left-title-1 {
+        font-size: 1.15rem;
+      }
+      .left-title-2 {
+        font-size: 0.85rem;
+      }
+    }
+
+    .location-right-panel {
+      .right-title-1 {
+        font-size: 1.15rem;
+      }
+      .right-title-2 {
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
