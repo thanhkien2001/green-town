@@ -3,6 +3,16 @@
     padding-top: 80px;
     padding-bottom: 80px;
 
+    @media (max-width: 991px) {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    @media (max-width: 768px) {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
     .s12-container {
         width: 100%;
         position: relative;
