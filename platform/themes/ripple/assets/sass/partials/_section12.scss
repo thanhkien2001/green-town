@@ -1,0 +1,164 @@
+.section12-wrap {
+    background-color: #1F4416;
+    padding-top: 80px;
+    padding-bottom: 80px;
+
+    .s12-container {
+        width: 100%;
+        position: relative;
+    }
+    
+    .section12-title {
+        color: #DFEE5D;
+        font-size: 56px;
+        font-weight: bold;
+        text-align: center;
+        margin: 0 0 60px 0;
+        padding: 0;
+
+        @media (max-width: 768px) {
+            font-size: 36px;
+            margin-bottom: 40px;
+        }
+    }
+
+    .s12-slider-wrapper {
+        position: relative; // Ensure arrows position relative to this wrapper
+        padding-left: calc(clamp(20px, 5vw, 97px) + 20px);
+        padding-right: calc(clamp(20px, 5vw, 97px) + 20px);
+
+        @media (max-width: 991px) {
+            padding-left: calc(clamp(20px, 5vw, 97px) + 15px);
+            padding-right: calc(clamp(20px, 5vw, 97px) + 15px);
+        }
+
+        @media (max-width: 768px) {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        
+        .swiper {
+            padding-top: 60px; // Space for the avatar overlapping the top border
+            padding-bottom: 20px;
+        }
+
+        .swiper-slide {
+            height: auto; // Make slides equal height
+        }
+
+        .testimonial-card {
+            background-color: #295420;
+            border: 2px solid #DFEE5D;
+            border-radius: 10px;
+            padding: 80px 30px 40px;
+            position: relative;
+            text-align: center;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+
+            @media (max-width: 768px) {
+                padding: 60px 20px 30px;
+            }
+
+            .testimonial-avatar {
+                position: absolute;
+                top: -60px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 120px;
+                height: 120px;
+                border-radius: 50%;
+                overflow: hidden;
+                background-color: #fff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                @media (max-width: 768px) {
+                    width: 100px;
+                    height: 100px;
+                    top: -50px;
+                }
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .testimonial-name {
+                color: #A8D845;
+                font-size: 34px;
+                font-weight: bold;
+                margin-bottom: 20px;
+
+                @media (max-width: 768px) {
+                    font-size: 24px;
+                }
+            }
+
+            .testimonial-text {
+                color: #fff;
+                font-size: 20px;
+                line-height: 1.6;
+                text-align: justify;
+                margin: 0;
+
+                @media (max-width: 768px) {
+                    font-size: 16px;
+                }
+            }
+        }
+
+        .s12-swiper-button-prev,
+        .s12-swiper-button-next {
+            position: absolute;
+            top: calc(50% + 30px); // Adjust for the 60px padding-top of the swiper
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background-color: #3f6e30; 
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #A8D845;
+            cursor: pointer;
+            z-index: 10;
+            transition: background-color 0.3s, opacity 0.3s;
+
+            &:hover {
+                background-color: #4b853a;
+            }
+
+            &.swiper-button-disabled {
+                opacity: 0.5;
+            }
+            
+            &.swiper-button-lock {
+                display: flex !important; // Force display even if there are not enough slides
+            }
+
+            @media (max-width: 768px) {
+                width: 30px;
+                height: 30px;
+                font-size: 14px;
+            }
+        }
+
+        .s12-swiper-button-prev {
+            left: 36px;
+        }
+
+        .s12-swiper-button-next {
+            right: 36px;
+        }
+
+        @media (max-width: 768px) {
+            .s12-swiper-button-prev { left: 0; }
+            .s12-swiper-button-next { right: 0; }
+        }
+    }
+}

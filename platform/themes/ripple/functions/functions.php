@@ -850,3 +850,67 @@ theme_option()
             ],
         ],
     ]);
+
+    theme_option()->setSection([
+        'title'      => 'Landing Page: Section 12',
+        'desc'       => 'Cấu hình nội dung cho Section 12 (Chia sẻ khách hàng)',
+        'id'         => 'opt-text-subsection-landing-page-s12',
+        'subsection' => true,
+        'icon'       => 'fas fa-users',
+        'fields'     => [
+            [
+                'id'         => 'ldp_s12_heading',
+                'type'       => 'text',
+                'label'      => 'Tiêu đề (CHIA SẺ KHÁCH HÀNG)',
+                'attributes' => [
+                    'name'    => 'ldp_s12_heading',
+                    'value'   => 'CHIA SẺ KHÁCH HÀNG',
+                    'options' => [
+                        'class' => 'form-control',
+                    ],
+                ],
+            ],
+            [
+                'id'         => 'ldp_s12_testimonials',
+                'type'       => 'repeater',
+                'label'      => 'Danh sách Đánh giá',
+                'attributes' => [
+                    'name'   => 'ldp_s12_testimonials',
+                    'value'  => null,
+                    'fields' => [
+                        [
+                            'type'       => 'text',
+                            'label'      => 'Tên khách hàng',
+                            'attributes' => [
+                                'name'    => 'name',
+                                'value'   => null,
+                                'options' => [
+                                    'class' => 'form-control',
+                                ],
+                            ],
+                        ],
+                        [
+                            'type'       => 'textarea',
+                            'label'      => 'Nội dung chia sẻ',
+                            'attributes' => [
+                                'name'    => 'content',
+                                'value'   => null,
+                                'options' => [
+                                    'class' => 'form-control',
+                                    'rows'  => 4,
+                                ],
+                            ],
+                        ],
+                        [
+                            'type'       => 'mediaImage',
+                            'label'      => 'Ảnh đại diện (Avatar)',
+                            'attributes' => [
+                                'name'  => 'avatar',
+                                'value' => null,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+    ]);
