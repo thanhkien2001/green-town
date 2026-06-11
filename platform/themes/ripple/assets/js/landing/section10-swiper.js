@@ -12,6 +12,7 @@ export default function initSection10Swiper() {
             //     delay: 5000,
             //     disableOnInteraction: false,
             // },
+            autoHeight: true,
         });
     } catch (e) {
         console.error('Error initializing Section 10 Swiper:', e);

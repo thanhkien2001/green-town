@@ -156,6 +156,8 @@
 
     // Responsive: Mobile
     @media (max-width: 767px) {
+        min-height: auto; // Tắt min-height trên mobile để không bị khoảng trắng
+        
         .s10-heading {
             font-size: 30px;
             padding-top: 40px;
