@@ -24,11 +24,24 @@
         position: absolute;
         bottom: 0;
         left: 0;
-        background-color: #295420;
-        padding: 60px 150px 60px 50px; // Extra right padding for the slant
-        clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%); // Slanted right edge
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        background-image: url('../images/section9-left.png');
+        background-size: cover;
+        background-position: left bottom;
+        background-repeat: no-repeat;
+        clip-path: none;
         z-index: 10;
-        max-width: 800px;
+        max-width: none;
+
+        // Căn chỉnh nội dung text đè lên ảnh
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+        padding-bottom: 65px; // Giảm padding để đẩy chữ xuống thấp hơn
+        padding-left: 80px;
     }
 
     .s9-heading {
@@ -60,7 +73,7 @@
         position: absolute;
         bottom: 0;
         right: 0; // Sát góc phải
-        z-index: 5;
+        z-index: 15; // Đưa lên trên khối left overlay để không bị che mất (nếu hình trái tràn qua)
         width: 35%;
         max-width: 450px;
 
@@ -75,20 +88,33 @@
     // Responsive: Desktop Smaller
     @media (max-width: 1400px) {
         min-height: 650px;
-        .s9-container { min-height: 650px; }
-        
+
+        .s9-container {
+            min-height: 650px;
+        }
+
         .s9-left-block {
             padding: 50px 100px 50px 40px;
             max-width: 700px;
         }
-        .s9-heading { font-size: 46px; }
-        .s9-btn { font-size: 32px; padding: 12px 28px; }
+
+        .s9-heading {
+            font-size: 46px;
+        }
+
+        .s9-btn {
+            font-size: 32px;
+            padding: 12px 28px;
+        }
     }
 
     // Responsive: Tablet
     @media (max-width: 991px) {
         min-height: 500px;
-        .s9-container { min-height: 500px; }
+
+        .s9-container {
+            min-height: 500px;
+        }
 
         .s9-left-block {
             padding: 40px 80px 40px 30px;
@@ -115,34 +141,38 @@
     // Responsive: Mobile
     @media (max-width: 767px) {
         min-height: 600px;
-        .s9-container { min-height: 600px; }
+
+        .s9-container {
+            min-height: 600px;
+        }
 
         .s9-left-block {
-            position: relative;
+            position: absolute;
+            bottom: 0;
+            left: 0;
             width: 100%;
-            max-width: 100%;
-            clip-path: none; // Disable slant on mobile for full width
-            padding: 30px 20px;
-            text-align: center;
-            margin-top: 300px; // Push down below background image focal point
+            height: 100%;
+            background-size: auto 57%; // Thu nhỏ hình nền lại một tí trên mobile
+            padding-bottom: 20px; // Giảm lề dưới cho khớp hình nhỏ
+            padding-left: 28px; // Rút lề trái về để không bị đẩy ra khỏi hình
+            padding-right: 20px;
+            align-items: flex-start;
+            text-align: left;
+            margin-top: 0;
         }
 
         .s9-heading {
-            font-size: 28px;
+            font-size: 22px; // Chữ nhỏ lại để vừa với hình
+            margin-bottom: 15px;
         }
 
         .s9-btn {
-            font-size: 20px;
-            padding: 10px 20px;
+            font-size: 16px; // Nút nhỏ lại một chút
+            padding: 8px 16px;
         }
 
         .s9-kid-wrapper {
-            width: 60%;
-            right: 0;
-            left: 0;
-            margin: 0 auto;
-            bottom: auto;
-            top: 50px; // Move kid to top center
+            display: none; // Ẩn bé gái trên mobile
         }
     }
 }
