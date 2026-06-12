@@ -12,6 +12,8 @@
         $jsPath = public_path('themes/ripple/js/landing-page.js');
         $ldpJsUrl = asset('themes/ripple/js/landing-page.js') . (file_exists($jsPath) ? '?v=' . filemtime($jsPath) : '');
     @endphp
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="{{ $ldpCssUrl }}">
 </head>
 <body @if (BaseHelper::isRtlEnabled()) dir="rtl" @endif>
@@ -57,6 +59,7 @@
     <!-- SECTION 4: FORM THU LEAD -->
 
     <!-- SECTION 5: FOOTER -->
+    {!! Theme::partial('landing.footer') !!}
 <!-- Debug size -->
 <div id="screen-size-debug" style="position: fixed; bottom: 10px; right: 10px; background: rgba(0,0,0,0.7); color: #fff; padding: 4px 8px; font-family: monospace; font-size: 11px; z-index: 999999; pointer-events: none; border-radius: 3px;">
     <span id="debug-w">0</span>

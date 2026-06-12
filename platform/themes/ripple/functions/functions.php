@@ -1103,3 +1103,92 @@ theme_option()
             ],
         ],
     ]);
+
+    theme_option()->setSection([
+        'title'      => 'Landing Page: Footer',
+        'desc'       => 'Cấu hình thông tin Footer của Landing Page',
+        'id'         => 'opt-text-subsection-landing-page-footer',
+        'subsection' => true,
+        'icon'       => 'fas fa-shoe-prints',
+        'fields'     => [
+            [
+                'id'         => 'ldp_footer_logo',
+                'type'       => 'mediaImage',
+                'label'      => 'Logo trắng dưới Footer',
+                'attributes' => [
+                    'name'    => 'ldp_footer_logo',
+                    'value'   => null,
+                ],
+            ],
+            [
+                'id'         => 'ldp_footer_address',
+                'type'       => 'text',
+                'label'      => 'Địa chỉ',
+                'attributes' => [
+                    'name'    => 'ldp_footer_address',
+                    'value'   => null,
+                    'options' => [
+                        'class'        => 'form-control',
+                        'placeholder'  => 'Nhập địa chỉ dự án',
+                        'data-counter' => 255,
+                    ],
+                ],
+            ],
+            [
+                'id'         => 'ldp_footer_email',
+                'type'       => 'text',
+                'label'      => 'Email',
+                'attributes' => [
+                    'name'    => 'ldp_footer_email',
+                    'value'   => null,
+                    'options' => [
+                        'class'        => 'form-control',
+                        'placeholder'  => 'Nhập email liên hệ',
+                        'data-counter' => 120,
+                    ],
+                ],
+            ],
+            [
+                'id'         => 'ldp_footer_phone',
+                'type'       => 'text',
+                'label'      => 'Số điện thoại',
+                'attributes' => [
+                    'name'    => 'ldp_footer_phone',
+                    'value'   => null,
+                    'options' => [
+                        'class'        => 'form-control',
+                        'placeholder'  => 'Nhập số điện thoại hotline',
+                        'data-counter' => 120,
+                    ],
+                ],
+            ],
+            [
+                'id'         => 'ldp_footer_facebook',
+                'type'       => 'text',
+                'label'      => 'Link Facebook',
+                'attributes' => [
+                    'name'    => 'ldp_footer_facebook',
+                    'value'   => null,
+                    'options' => [
+                        'class'        => 'form-control',
+                        'placeholder'  => 'Nhập link fanpage facebook',
+                        'data-counter' => 255,
+                    ],
+                ],
+            ],
+            [
+                'id'         => 'ldp_footer_youtube',
+                'type'       => 'text',
+                'label'      => 'Link Youtube',
+                'attributes' => [
+                    'name'    => 'ldp_footer_youtube',
+                    'value'   => null,
+                    'options' => [
+                        'class'        => 'form-control',
+                        'placeholder'  => 'Nhập link kênh youtube',
+                        'data-counter' => 255,
+                    ],
+                ],
+            ],
+        ],
+    ]);
