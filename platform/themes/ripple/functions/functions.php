@@ -539,6 +539,7 @@ theme_option()
 
     theme_option()->setSection([
         'title'      => 'Landing Page: Section 6',
+        'priority'   => 15,
         'desc'       => 'Cấu hình nội dung cho Section 6 (Tiện ích nội khu)',
         'id'         => 'opt-text-subsection-landing-page-s6',
         'subsection' => true,
@@ -599,6 +600,7 @@ theme_option()
 
     theme_option()->setSection([
         'title'      => 'Landing Page: Section 7',
+        'priority'   => 16,
         'desc'       => 'Cấu hình nội dung cho Section 7 (Mặt bằng)',
         'id'         => 'opt-text-subsection-landing-page-s7',
         'subsection' => true,
@@ -629,8 +631,158 @@ theme_option()
         ],
     ]);
 
+    
+    theme_option()->setSection([
+        'title'      => 'Landing Page: Section 8',
+        'desc'       => 'Cấu hình nội dung cho Section 8 (Layout căn hộ)',
+        'id'         => 'opt-text-subsection-landing-page-s8',
+        'subsection' => true,
+        'priority'   => 17,
+        'icon'       => 'fas fa-th-large',
+        'fields'     => [
+            [
+                'id'         => 'ldp_s8_heading',
+                'type'       => 'text',
+                'label'      => 'Tiêu đề',
+                'attributes' => [
+                    'name'    => 'ldp_s8_heading',
+                    'value'   => 'LAYOUT CĂN HỘ ĐIỂN HÌNH',
+                    'options' => [
+                        'class' => 'form-control',
+                    ],
+                ],
+            ],
+            [
+                'id'         => 'ldp_s8_kid_img',
+                'type'       => 'mediaImage',
+                'label'      => 'Hình em bé (Góc phải trên)',
+                'attributes' => [
+                    'name'  => 'ldp_s8_kid_img',
+                    'value' => null,
+                ],
+            ],
+            [
+                'id'         => 'ldp_s8_img1',
+                'type'       => 'mediaImage',
+                'label'      => 'Hình Layout 1',
+                'attributes' => [
+                    'name'  => 'ldp_s8_img1',
+                    'value' => null,
+                ],
+            ],
+            [
+                'id'         => 'ldp_s8_title1',
+                'type'       => 'text',
+                'label'      => 'Tiêu đề Layout 1',
+                'attributes' => [
+                    'name'    => 'ldp_s8_title1',
+                    'value'   => 'CĂN HỘ LOẠI A',
+                    'options' => ['class' => 'form-control'],
+                ],
+            ],
+            [
+                'id'         => 'ldp_s8_desc1',
+                'type'       => 'text',
+                'label'      => 'Mô tả Layout 1',
+                'attributes' => [
+                    'name'    => 'ldp_s8_desc1',
+                    'value'   => '(2PN1WC)',
+                    'options' => ['class' => 'form-control'],
+                ],
+            ],
+            [
+                'id'         => 'ldp_s8_img2',
+                'type'       => 'mediaImage',
+                'label'      => 'Hình Layout 2',
+                'attributes' => [
+                    'name'  => 'ldp_s8_img2',
+                    'value' => null,
+                ],
+            ],
+            [
+                'id'         => 'ldp_s8_title2',
+                'type'       => 'text',
+                'label'      => 'Tiêu đề Layout 2',
+                'attributes' => [
+                    'name'    => 'ldp_s8_title2',
+                    'value'   => 'CĂN HỘ LOẠI B',
+                    'options' => ['class' => 'form-control'],
+                ],
+            ],
+            [
+                'id'         => 'ldp_s8_desc2',
+                'type'       => 'text',
+                'label'      => 'Mô tả Layout 2',
+                'attributes' => [
+                    'name'    => 'ldp_s8_desc2',
+                    'value'   => '(2PN2WC <70M2)',
+                    'options' => ['class' => 'form-control'],
+                ],
+            ],
+            [
+                'id'         => 'ldp_s8_img3',
+                'type'       => 'mediaImage',
+                'label'      => 'Hình Layout 3',
+                'attributes' => [
+                    'name'  => 'ldp_s8_img3',
+                    'value' => null,
+                ],
+            ],
+            [
+                'id'         => 'ldp_s8_title3',
+                'type'       => 'text',
+                'label'      => 'Tiêu đề Layout 3',
+                'attributes' => [
+                    'name'    => 'ldp_s8_title3',
+                    'value'   => 'CĂN HỘ LOẠI C',
+                    'options' => ['class' => 'form-control'],
+                ],
+            ],
+            [
+                'id'         => 'ldp_s8_desc3',
+                'type'       => 'text',
+                'label'      => 'Mô tả Layout 3',
+                'attributes' => [
+                    'name'    => 'ldp_s8_desc3',
+                    'value'   => '(2PN2WC >70M2)',
+                    'options' => ['class' => 'form-control'],
+                ],
+            ],
+            [
+                'id'         => 'ldp_s8_img4',
+                'type'       => 'mediaImage',
+                'label'      => 'Hình Layout 4',
+                'attributes' => [
+                    'name'  => 'ldp_s8_img4',
+                    'value' => null,
+                ],
+            ],
+            [
+                'id'         => 'ldp_s8_title4',
+                'type'       => 'text',
+                'label'      => 'Tiêu đề Layout 4',
+                'attributes' => [
+                    'name'    => 'ldp_s8_title4',
+                    'value'   => 'CĂN HỘ LOẠI D',
+                    'options' => ['class' => 'form-control'],
+                ],
+            ],
+            [
+                'id'         => 'ldp_s8_desc4',
+                'type'       => 'text',
+                'label'      => 'Mô tả Layout 4',
+                'attributes' => [
+                    'name'    => 'ldp_s8_desc4',
+                    'value'   => '(3PN2WC)',
+                    'options' => ['class' => 'form-control'],
+                ],
+            ],
+        ],
+    ]);
+
     theme_option()->setSection([
         'title'      => 'Landing Page: Section 9',
+        'priority'   => 18,
         'desc'       => 'Cấu hình nội dung cho Section 9 (Pháp lý hoàn chỉnh)',
         'id'         => 'opt-text-subsection-landing-page-s9',
         'subsection' => true,
@@ -696,6 +848,7 @@ theme_option()
 
     theme_option()->setSection([
         'title'      => 'Landing Page: Section 10',
+        'priority'   => 19,
         'desc'       => 'Cấu hình nội dung cho Section 10 (Phương thức thanh toán)',
         'id'         => 'opt-text-subsection-landing-page-s10',
         'subsection' => true,
@@ -735,6 +888,7 @@ theme_option()
     ]);
         theme_option()->setSection([
         'title'      => 'Landing Page: Section 11',
+        'priority'   => 20,
         'desc'       => 'Cấu hình nội dung cho Section 11 (Slider Hình Ảnh)',
         'id'         => 'opt-text-subsection-landing-page-s11',
         'subsection' => true,
@@ -858,6 +1012,7 @@ theme_option()
 
     theme_option()->setSection([
         'title'      => 'Landing Page: Section 12',
+        'priority'   => 21,
         'desc'       => 'Cấu hình nội dung cho Section 12 (Chia sẻ khách hàng)',
         'id'         => 'opt-text-subsection-landing-page-s12',
         'subsection' => true,
@@ -931,6 +1086,7 @@ theme_option()
 
     theme_option()->setSection([
         'title'      => 'Landing Page: Section 13',
+        'priority'   => 22,
         'desc'       => 'Cấu hình ảnh nền nguyên khối cho Section 13',
         'id'         => 'opt-text-subsection-landing-page-s13',
         'subsection' => true,

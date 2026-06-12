@@ -1,0 +1,157 @@
+/* ============================================================
+   Section 8: Layout Căn Hộ
+   ============================================================ */
+
+.kia-section-8 {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 80px 0 100px;
+    position: relative;
+    overflow: hidden;
+
+    .s8-kid-bg {
+        position: absolute;
+        top: -5%;
+        right: -2%; // Góc phải trên
+        width: 15%; // Chỉnh độ rộng
+        max-width: 200px;
+        min-width: 100px;
+        z-index: 10;
+        pointer-events: none;
+        transform: rotate(15deg); // Nghiêng hướng 1h
+        opacity: 0.9;
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    }
+
+    .s8-container {
+        width: 100%;
+        margin: 0;
+        position: relative;
+        z-index: 2;
+        padding-left: calc(clamp(20px, 5vw, 97px) + 20px);
+        padding-right: calc(clamp(20px, 5vw, 97px) + 20px);
+    }
+
+    .s8-heading {
+        color: #5EA345;
+        font-size: 54px;
+        text-transform: uppercase;
+        margin-bottom: 60px;
+        line-height: 1.2;
+        text-align: center;
+    }
+
+    .s8-layouts-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+    }
+
+    .s8-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 30px;
+    }
+
+    .s8-item {
+        width: 48%; // 2 item per row with space-between
+        text-align: center;
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            transition: transform 0.3s ease;
+            
+            &:hover {
+                transform: scale(1.02);
+            }
+        }
+
+        .s8-text-box {
+            margin-top: 30px;
+        }
+
+        .s8-item-title {
+            color: #5EA345;
+            font-size: 32px;
+            margin: 0 0 5px 0;
+            text-transform: uppercase;
+        }
+
+        .s8-item-desc {
+            color: #333333;
+            font-size: 24px;
+            margin: 0;
+        }
+    }
+
+    // Responsive: Tablet
+    @media (max-width: 991px) {
+        padding: 60px 0 80px;
+
+        .s8-heading {
+            font-size: 40px;
+            margin-bottom: 40px;
+        }
+
+        .s8-kid-bg {
+            top: -2%;
+            right: -5%;
+            width: 18%;
+        }
+
+        .s8-row {
+            gap: 20px;
+        }
+
+        .s8-layouts-wrapper {
+            gap: 40px;
+        }
+    }
+
+    // Responsive: Mobile
+    @media (max-width: 767px) {
+        padding: 40px 0 60px;
+
+        .s8-heading {
+            font-size: 30px;
+            margin-bottom: 30px;
+        }
+
+        .s8-kid-bg {
+            top: 0;
+            right: -5%;
+            width: 25%;
+            opacity: 0.5; // Mờ đi 1 chút trên mobile cho đỡ che nội dung
+        }
+
+        .s8-row {
+            flex-direction: column; // Trải dọc trên mobile để dễ nhìn bản đồ
+            gap: 40px;
+        }
+
+        .s8-item {
+            width: 100%;
+        }
+
+        .s8-item-title {
+            font-size: 26px;
+        }
+
+        .s8-item-desc {
+            font-size: 18px;
+        }
+
+        .s8-layouts-wrapper {
+            gap: 40px;
+        }
+    }
+}

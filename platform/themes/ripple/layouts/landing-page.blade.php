@@ -36,8 +36,7 @@
 
     {{-- SECTION 7 --}}
     {!! Theme::partial('landing.section7') !!}
-
-    {{-- SECTION 9 --}}
+    {!! Theme::partial('landing.section8') !!}
     {!! Theme::partial('landing.section9') !!}
 
     {{-- SECTION 10 --}}
