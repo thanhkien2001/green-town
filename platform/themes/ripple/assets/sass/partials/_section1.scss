@@ -16,6 +16,13 @@
     height: auto;
     aspect-ratio: 2064/1152;
   }
+
+  // Trên mobile (ví dụ dưới 768px), nếu muốn dùng 100vh thì bắt buộc phải dùng ảnh dọc
+  @media (max-width: 767px) {
+    height: 100vh;
+    // Thay đường dẫn ảnh này bằng ảnh dành riêng cho mobile
+    // background-image: url('../images/banner-mobile.jpg'); 
+  }
 }
 
 @keyframes heroCinematicFade {
@@ -23,6 +30,7 @@
     opacity: 0;
     transform: scale(1.04);
   }
+
   to {
     opacity: 1;
     transform: scale(1);

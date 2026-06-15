@@ -103,9 +103,18 @@ theme_option()
             [
                 'id'         => 'ldp_s1_bg',
                 'type'       => 'mediaImage',
-                'label'      => 'Ảnh nền Section 1 (Hero Banner)',
+                'label'      => 'Ảnh nền Section 1 (Hero Banner - PC)',
                 'attributes' => [
                     'name'  => 'ldp_s1_bg',
+                    'value' => null,
+                ],
+            ],
+            [
+                'id'         => 'ldp_s1_bg_mobile',
+                'type'       => 'mediaImage',
+                'label'      => 'Ảnh nền Section 1 (Mobile)',
+                'attributes' => [
+                    'name'  => 'ldp_s1_bg_mobile',
                     'value' => null,
                 ],
             ],
