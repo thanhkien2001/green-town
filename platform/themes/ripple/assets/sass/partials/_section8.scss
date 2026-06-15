@@ -5,26 +5,26 @@
 .kia-section-8 {
     width: 100%;
     background-color: #ffffff;
-    padding: 80px 0 100px;
+    padding: 0px 0 100px;
     position: relative;
-    overflow: hidden;
+    z-index: 10; // Overlap section 7
 
     .s8-kid-bg {
         position: absolute;
         top: -5%;
-        right: -2%; // Góc phải trên
+        left: -7%;
         width: 15%; // Chỉnh độ rộng
-        max-width: 200px;
-        min-width: 100px;
-        z-index: 10;
+        max-width: 300px;
+        min-width: 250px;
+        z-index: -1;
         pointer-events: none;
-        transform: rotate(15deg); // Nghiêng hướng 1h
-        opacity: 0.9;
 
         img {
             width: 100%;
             height: auto;
             display: block;
+            transform: rotate(20deg); // Nghiêng hướng 1h
+            opacity: 0.9;
         }
     }
 
@@ -44,39 +44,44 @@
         margin-bottom: 60px;
         line-height: 1.2;
         text-align: center;
+        margin: 0px;
     }
 
     .s8-layouts-wrapper {
         display: flex;
         flex-direction: column;
-        gap: 60px;
     }
 
     .s8-row {
         display: flex;
         justify-content: space-between;
-        align-items: flex-start;
+        align-items: stretch; // Kéo giãn các item bằng nhau
         gap: 30px;
     }
 
     .s8-item {
         width: 48%; // 2 item per row with space-between
         text-align: center;
+        display: flex;
+        flex-direction: column;
 
         img {
             width: 100%;
-            height: auto;
+            aspect-ratio: 1303 / 852; // Tỷ lệ chuẩn bám sát kích thước thực tế của ảnh
             display: block;
             margin: 0 auto;
+            object-fit: cover; // Dùng cover để phủ kín khung, tránh lệch chữ
+            object-position: center;
             transition: transform 0.3s ease;
-            
+
             &:hover {
                 transform: scale(1.02);
             }
         }
 
         .s8-text-box {
-            margin-top: 30px;
+            margin-top: auto; // Luôn đẩy text box xuống dưới cùng để thẳng hàng nhau
+            padding-top: 30px;
         }
 
         .s8-item-title {
@@ -113,7 +118,7 @@
         }
 
         .s8-layouts-wrapper {
-            gap: 40px;
+            gap: 0px;
         }
     }
 
@@ -127,15 +132,17 @@
         }
 
         .s8-kid-bg {
-            top: 0;
-            right: -5%;
-            width: 25%;
-            opacity: 0.5; // Mờ đi 1 chút trên mobile cho đỡ che nội dung
+            top: -4%;
+            left: -19%;
+            right: auto;
+            width: 35%; // Tăng width một chút để khỏi bị quá nhỏ
+            max-width: 150px;
+            min-width: 150px;
+            z-index: -1;
         }
 
         .s8-row {
             flex-direction: column; // Trải dọc trên mobile để dễ nhìn bản đồ
-            gap: 40px;
         }
 
         .s8-item {
@@ -151,7 +158,7 @@
         }
 
         .s8-layouts-wrapper {
-            gap: 40px;
+            gap: 0px;
         }
     }
 }

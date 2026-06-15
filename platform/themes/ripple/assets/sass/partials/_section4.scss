@@ -2,9 +2,9 @@
   width: 100%;
   height: 100vh; // Khóa cứng chiều cao đúng 1 màn hình trên desktop
   max-height: 100vh;
-  overflow: hidden;
   background-color: #ffffff;
   position: relative;
+  z-index: 5; // Để decor-mascot đè lên section 5
 
   .utilities-wrapper {
     display: flex;
@@ -36,8 +36,8 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding: 5vh 5vw 5vh 4vw; // Sử dụng vh và vw để padding tự co giãn mượt mà
+    // justify-content: center;
+    padding: 10vh 5vw 5vh 4vw; // Sử dụng vh và vw để padding tự co giãn mượt mà
     box-sizing: border-box;
   }
 
@@ -45,7 +45,7 @@
     max-width: 780px; // Tăng chiều rộng tối đa để chứa đủ cụm từ dài trên một dòng
     width: 100%;
     position: relative;
-    z-index: 6; 
+    z-index: 6;
   }
 
   .utility-title {
@@ -72,7 +72,7 @@
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: clamp(6px, 1.2vh, 14px); // Khoảng cách giữa các tiện ích tự động co giãn theo vh để tránh tràn màn hình
+    gap: clamp(6px, 1.5vh, 14px); // Khoảng cách giữa các tiện ích tự động co giãn theo vh để tránh tràn màn hình
   }
 
   .utility-item {
@@ -86,15 +86,15 @@
     height: 6px;
     border-radius: 50%;
     background-color: #5EA146; // Dấu chấm tròn đồng bộ màu lục
-    margin-top: 0.8vh; // Canh lề theo chiều cao chữ
+    margin-top: 14px; // Canh giữa dòng đầu tiên của chữ
     margin-right: 12px;
     flex-shrink: 0;
   }
 
   .item-text {
-    font-size: clamp(1rem, 1.8vh, 1.25rem); // Tối đa 20px, co giãn mượt mà
+    font-size: clamp(1rem, 2vh, 1.5rem); // Tối đa 24px, co giãn mượt mà
     color: #5EA146; // Tất cả chữ đồng bộ màu lục, không có cái nào đậm hơn
-    line-height: 1.4;
+    line-height: 1.8;
     word-break: break-word;
   }
 
@@ -118,7 +118,7 @@
   .decor-mascot {
     position: absolute;
     right: 0;
-    bottom: -40px; // Kéo cậu bé chìm xuống dưới mép một chút để loại bỏ hoàn toàn khoảng hở
+    bottom: -42px; // Kéo cậu bé chìm xuống dưới mép một chút để loại bỏ hoàn toàn khoảng hở
     height: 26vh; // Mascot cậu bé tự động thu nhỏ/phóng to theo chiều cao viewport
     pointer-events: none;
     z-index: 5;
@@ -222,7 +222,7 @@
 
   // ─── ≤ 768px: Mobile & Máy tính bảng đứng (Chuyển sang cuộn dọc tự do) ──────
   @media (max-width: 768px) {
-    height: auto !important; 
+    height: auto !important;
     max-height: none !important;
     overflow: visible !important;
 
@@ -297,6 +297,7 @@
   @media (max-width: 480px) {
     .utilities-map-panel {
       height: 280px !important;
+      min-height: 280px !important;
     }
 
     .utilities-info-panel {
@@ -317,8 +318,8 @@
     }
 
     .decor-mascot {
-      width: 100px;
-      bottom: -8px; // Dịch nhẹ xuống dưới mép trên mobile nhỏ
+      width: 150px;
+      bottom: -26px; // Dịch nhẹ xuống dưới mép trên mobile nhỏ
     }
   }
 }

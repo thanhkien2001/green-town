@@ -2000,6 +2000,17 @@ p:empty {
 }
 
 @media screen and (max-width: 767px) {
+    .page-footer {
+        img {
+            display: block;
+            margin: 0 auto 15px auto;
+        }
+        
+        .widget {
+            text-align: center;
+        }
+    }
+
     .page-footer__bottom {
         text-align: center
     }

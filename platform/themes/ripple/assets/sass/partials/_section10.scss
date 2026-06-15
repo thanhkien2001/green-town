@@ -12,6 +12,7 @@
     position: relative;
 
     .s10-leaf-bg {
+        transition-delay: 400ms !important;
         position: absolute;
         right: -5%;
         top: -33%;
@@ -157,7 +158,7 @@
     // Responsive: Mobile
     @media (max-width: 767px) {
         min-height: auto; // Tắt min-height trên mobile để không bị khoảng trắng
-        
+
         .s10-leaf-bg {
             position: absolute;
             right: -11%;

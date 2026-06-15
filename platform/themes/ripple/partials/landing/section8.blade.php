@@ -26,7 +26,7 @@
 
 <section id="section8" class="kia-section-8">
     <!-- Cậu bé góc phải trên -->
-    <div class="s8-kid-bg js-reveal">
+    <div class="s8-kid-bg js-reveal" style="transition-delay: 400ms;">
         <img src="{{ $kidImgUrl }}" alt="Kid" />
     </div>
 
@@ -38,15 +38,15 @@
                 <div class="s8-item">
                     <img src="{{ $img1Url }}" alt="{{ $title1 }}" class="img-fluid" />
                     <div class="s8-text-box">
-                        <h3 class="s8-item-title font-selecta-bold">{{ $title1 }}</h3>
-                        <p class="s8-item-desc font-selecta-bold">{{ $desc1 }}</p>
+                        <h3 class="s8-item-title font-selecta-bold">{!! $title1 !!}</h3>
+                        <p class="s8-item-desc font-selecta-bold">{!! $desc1 !!}</p>
                     </div>
                 </div>
                 <div class="s8-item">
                     <img src="{{ $img2Url }}" alt="{{ $title2 }}" class="img-fluid" />
                     <div class="s8-text-box">
-                        <h3 class="s8-item-title font-selecta-bold">{{ $title2 }}</h3>
-                        <p class="s8-item-desc font-selecta-bold">{{ $desc2 }}</p>
+                        <h3 class="s8-item-title font-selecta-bold">{!! $title2 !!}</h3>
+                        <p class="s8-item-desc font-selecta-bold">{!! $desc2 !!}</p>
                     </div>
                 </div>
             </div>
@@ -54,15 +54,15 @@
                 <div class="s8-item">
                     <img src="{{ $img3Url }}" alt="{{ $title3 }}" class="img-fluid" />
                     <div class="s8-text-box">
-                        <h3 class="s8-item-title font-selecta-bold">{{ $title3 }}</h3>
-                        <p class="s8-item-desc font-selecta-bold">{{ $desc3 }}</p>
+                        <h3 class="s8-item-title font-selecta-bold">{!! $title3 !!}</h3>
+                        <p class="s8-item-desc font-selecta-bold">{!! $desc3 !!}</p>
                     </div>
                 </div>
                 <div class="s8-item">
                     <img src="{{ $img4Url }}" alt="{{ $title4 }}" class="img-fluid" />
                     <div class="s8-text-box">
-                        <h3 class="s8-item-title font-selecta-bold">{{ $title4 }}</h3>
-                        <p class="s8-item-desc font-selecta-bold">{{ $desc4 }}</p>
+                        <h3 class="s8-item-title font-selecta-bold">{!! $title4 !!}</h3>
+                        <p class="s8-item-desc font-selecta-bold">{!! $desc4 !!}</p>
                     </div>
                 </div>
             </div>

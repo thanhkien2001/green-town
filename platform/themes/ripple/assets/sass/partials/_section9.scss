@@ -94,17 +94,19 @@
         }
 
         .s9-left-block {
-            padding: 50px 100px 50px 40px;
+            padding: 50px 100px 40px 40px;
             max-width: 700px;
         }
 
         .s9-heading {
-            font-size: 46px;
+            font-size: 43px;
+            margin: 0 0 30px 24px;
         }
 
         .s9-btn {
             font-size: 32px;
             padding: 12px 28px;
+            margin-left: 24px;
         }
     }
 
@@ -163,12 +165,13 @@
 
         .s9-heading {
             font-size: 22px; // Chữ nhỏ lại để vừa với hình
-            margin-bottom: 15px;
+            margin: 0 0 30px 0px;
         }
 
         .s9-btn {
             font-size: 16px; // Nút nhỏ lại một chút
             padding: 8px 16px;
+            margin-left: 0;
         }
 
         .s9-kid-wrapper {
