@@ -2,7 +2,7 @@
 @php
     // Cấu hình ảnh nền chính (Desktop)
     $bgImageRaw = theme_option('ldp_s3_bg');
-    if (!empty($bgImageRaw)) {
+    if (!empty($bgImageRaw) && $bgImageRaw != '0' && $bgImageRaw != 'null') {
         if (filter_var($bgImageRaw, FILTER_VALIDATE_URL) || str_starts_with($bgImageRaw, '/') || str_contains($bgImageRaw, 'storage/')) {
             $bgImage = $bgImageRaw;
         } else {
@@ -13,15 +13,14 @@
     }
 
     // Cấu hình ảnh nền Mobile
-    $bgMobileRaw = theme_option('ldp_s3_bg_mb');
-    if (!empty($bgMobileRaw)) {
+    $bgMobileRaw = theme_option('ldp_s3_bg_mobile');
+    $bgMobile = $bgImage;
+    if (!empty($bgMobileRaw) && $bgMobileRaw != '0' && $bgMobileRaw != 'null') {
         if (filter_var($bgMobileRaw, FILTER_VALIDATE_URL) || str_starts_with($bgMobileRaw, '/') || str_contains($bgMobileRaw, 'storage/')) {
             $bgMobile = $bgMobileRaw;
         } else {
             $bgMobile = RvMedia::getImageUrl($bgMobileRaw);
         }
-    } else {
-        $bgMobile = $bgImage;
     }
 
     // Lọc URL cho ngrok / thiết bị di động
@@ -47,11 +46,33 @@
     $rightTitle2 = theme_option('ldp_s3_right_title2') ?: 'LANDMARK DÂN CƯ CỦA KHU ĐÔ THỊ VĨNH LỘC';
 @endphp
 
-<section id="section-location" class="location-section">
+<style>
+    @media (min-width: 768px) {
+        #section-location.js-reveal {
+            opacity: 1 !important;
+            transform: none !important;
+            transition: none !important;
+            visibility: visible !important;
+        }
+    }
+    @media (max-width: 767px) {
+        #section-location.js-reveal {
+            transition: all 1.5s cubic-bezier(0.25, 1, 0.5, 1) !important;
+        }
+        #section-location .location-container,
+        #section-location .layer-clip,
+        #section-location::before,
+        #section-location::after {
+            display: none !important;
+        }
+    }
+</style>
+
+<section id="section-location" class="location-section js-reveal">
     <!-- Background Layers -->
     <div class="background-layers">
         <picture class="bg-picture-wrapper">
-            <source media="(max-width: 768px)" srcset="{{ $bgMobile }}" />
+            <source media="(max-width: 767px)" srcset="{{ $bgMobile }}" />
             <img src="{{ $bgImage }}" class="bg-layer layer-base" alt="Background Location" />
         </picture>
         <!-- Layer 2: Khối hình xanh lá cây góc trái từ ảnh 1920x1080 trong suốt -->

@@ -11,6 +11,16 @@
         $bgImage = asset('themes/ripple/images/section2.webp');
     }
 
+    $bgMobileRaw = theme_option('ldp_s2_bg_mobile');
+    $bgMobile = $bgImage;
+    if (!empty($bgMobileRaw) && $bgMobileRaw != '0' && $bgMobileRaw != 'null') {
+        if (filter_var($bgMobileRaw, FILTER_VALIDATE_URL) || str_starts_with($bgMobileRaw, '/') || str_contains($bgMobileRaw, 'storage/')) {
+            $bgMobile = $bgMobileRaw;
+        } else {
+            $bgMobile = RvMedia::getImageUrl($bgMobileRaw);
+        }
+    }
+
     $s2Title = theme_option('ldp_s2_title') ?: 'THÔNG TIN TỔNG QUAN';
 
     // Cột 1: SOLENA
@@ -67,7 +77,34 @@
     }
 @endphp
 
-<section id="section-overview" class="overview-section" style="background-image: url('{{ $bgImage }}');">
+<style>
+    .overview-section {
+        background-image: url('{{ $bgImage }}');
+    }
+    @media (min-width: 768px) {
+        .overview-section.js-reveal {
+            opacity: 1 !important;
+            transform: none !important;
+            transition: none !important;
+            visibility: visible !important;
+        }
+    }
+    @media (max-width: 767px) {
+        .overview-section {
+            background-image: url('{{ $bgMobile }}') !important;
+        }
+        .overview-section.js-reveal {
+            transition: all 1.5s cubic-bezier(0.25, 1, 0.5, 1) !important;
+        }
+        .overview-section .overview-container,
+        .overview-section::before,
+        .overview-section::after {
+            display: none !important;
+        }
+    }
+</style>
+
+<section id="section-overview" class="overview-section js-reveal">
     <div class="overview-container">
         <!-- Tiêu đề chính -->
         <h2 class="overview-main-title font-selecta-black js-reveal">{{ $s2Title }}</h2>

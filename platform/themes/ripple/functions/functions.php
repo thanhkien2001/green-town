@@ -139,6 +139,15 @@ theme_option()
                 ],
             ],
             [
+                'id'         => 'ldp_s2_bg_mobile',
+                'type'       => 'mediaImage',
+                'label'      => 'Ảnh nền Section 2 (Mobile)',
+                'attributes' => [
+                    'name'  => 'ldp_s2_bg_mobile',
+                    'value' => null,
+                ],
+            ],
+            [
                 'id'         => 'ldp_s2_title',
                 'type'       => 'text',
                 'label'      => 'Tiêu đề chính',
@@ -262,11 +271,11 @@ theme_option()
                 ],
             ],
             [
-                'id'         => 'ldp_s3_bg_mb',
+                'id'         => 'ldp_s3_bg_mobile',
                 'type'       => 'mediaImage',
                 'label'      => 'Ảnh nền Section 3 (Mobile)',
                 'attributes' => [
-                    'name'  => 'ldp_s3_bg_mb',
+                    'name'  => 'ldp_s3_bg_mobile',
                     'value' => null,
                 ],
             ],
