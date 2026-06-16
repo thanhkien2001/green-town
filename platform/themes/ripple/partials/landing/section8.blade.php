@@ -29,7 +29,6 @@
     <div class="s8-kid-bg js-reveal" style="transition-delay: 400ms;">
         <img src="{{ $kidImgUrl }}" alt="Kid" />
     </div>
-
     <div class="s8-container">
         <h2 class="s8-heading font-selecta-bold js-reveal">{{ $heading }}</h2>
 
