@@ -81,7 +81,7 @@
 
         .s8-text-box {
             margin-top: auto; // Luôn đẩy text box xuống dưới cùng để thẳng hàng nhau
-            padding-top: 30px;
+            padding-top: 0px;
         }
 
         .s8-item-title {
@@ -104,7 +104,7 @@
 
         .s8-heading {
             font-size: 40px;
-            margin-bottom: 40px;
+            margin-bottom: 0px;
         }
 
         .s8-kid-bg {
@@ -128,7 +128,7 @@
 
         .s8-heading {
             font-size: 30px;
-            margin-bottom: 30px;
+            margin-bottom: 0px;
         }
 
         .s8-kid-bg {
@@ -147,6 +147,10 @@
 
         .s8-item {
             width: 100%;
+        }
+
+        .s8-text-box {
+            padding-top: 0px;
         }
 
         .s8-item-title {
