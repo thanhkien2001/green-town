@@ -3,7 +3,7 @@
     $floorPlanImg = theme_option('ldp_s7_img', '/themes/ripple/images/section7.jpg');
 @endphp
 
-<section id="section7" class="kia-section-7" style="background-color: #ffffff; position: relative; z-index: 2;">
+<section id="section-layout" class="kia-section-7" style="background-color: #ffffff; position: relative; z-index: 2;">
     <!-- Leaf Decoration Top Left -->
     <div class="s7-leaf-bg js-reveal" style="background-image: url('{{ asset('themes/ripple/images/la_2.png') }}'); transition-delay: 400ms;"></div>
 

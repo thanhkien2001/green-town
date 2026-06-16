@@ -40,7 +40,7 @@
 @endphp
 
 
-<section id="section11" class="kia-section-11">
+<section id="section-image" class="kia-section-11">
     <div class="s11-container">
         @foreach ($rows as $index => $row)
             <div class="s11-row-container js-reveal">

@@ -91,6 +91,68 @@ app()->booted(function () {
 // ─── Landing Page Theme Options ───────────────────────────────────────────────
 
 theme_option()
+    // Header Menu
+    ->setSection([
+        'title'      => 'Header Menu',
+        'desc'       => 'Cấu hình Menu Header và Logos cho Landing Page',
+        'priority'   => 9,
+        'id'         => 'opt-section-landing-header',
+        'subsection' => true,
+        'icon'       => 'fa fa-bars',
+        'fields'     => [
+            [
+                'id'         => 'ldp_header_logo1',
+                'type'       => 'mediaImage',
+                'label'      => 'Logo 1 (Bên trái)',
+                'attributes' => [
+                    'name'  => 'ldp_header_logo1',
+                    'value' => null,
+                ],
+            ],
+            [
+                'id'         => 'ldp_header_logo2',
+                'type'       => 'mediaImage',
+                'label'      => 'Logo 2 (Bên trái, cạnh Logo 1)',
+                'attributes' => [
+                    'name'  => 'ldp_header_logo2',
+                    'value' => null,
+                ],
+            ],
+            [
+                'id'         => 'ldp_header_menu',
+                'type'       => 'repeater',
+                'label'      => 'Danh sách Menu liên kết',
+                'attributes' => [
+                    'name'    => 'ldp_header_menu',
+                    'value'   => null,
+                    'fields'  => [
+                        [
+                            'type'       => 'text',
+                            'label'      => 'Tên Menu (Ví dụ: Vị trí)',
+                            'attributes' => [
+                                'name'    => 'title',
+                                'value'   => null,
+                                'options' => [
+                                    'class' => 'form-control',
+                                ],
+                            ],
+                        ],
+                        [
+                            'type'       => 'text',
+                            'label'      => 'Liên kết Section ID (Ví dụ: #section-utilities)',
+                            'attributes' => [
+                                'name'    => 'anchor',
+                                'value'   => null,
+                                'options' => [
+                                    'class' => 'form-control',
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+    ])
     // Section 1
     ->setSection([
         'title'      => 'Landing Page: S1 Hero',
