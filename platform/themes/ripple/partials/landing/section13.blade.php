@@ -15,8 +15,17 @@
     <div class="s13-image-container">
         <!-- The background image that contains the design -->
         @if($bgImage)
-            <img src="{{ $bgImage }}" alt="Section 13" class="s13-bg-image">
+            <picture>
+                <source media="(max-width: 768px)" srcset="{{ asset('themes/ripple/images/sec_contact_mb.webp') }}">
+                <img src="{{ $bgImage }}" alt="Section 13" class="s13-bg-image">
+            </picture>
         @endif
+
+        <!-- Text overlay only visible on Mobile inside the green empty space -->
+        <div class="s13-mobile-info-text">
+            <h3 class="s13-mb-title">NHẬN THÔNG TIN DỰ ÁN</h3>
+            <p class="s13-mb-desc">Để lại thông tin liên hệ, nhận tin tức mới nhất của<br>SOLENA BY GREEN TOWN từ chúng tôi</p>
+        </div>
         
         <!-- Visible form overlaying the image -->
         <div class="s13-form-overlay">
