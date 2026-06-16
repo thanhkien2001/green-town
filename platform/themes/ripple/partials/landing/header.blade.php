@@ -13,14 +13,32 @@
         $logo2 = RvMedia::getImageUrl($logo2Raw);
     }
 
-    // Menu list
+    // Menu list từ theme options (cấu hình trong admin)
     $menuRaw = theme_option('ldp_header_menu');
     $menuItems = [];
     if (!empty($menuRaw)) {
-        $menuItems = is_array($menuRaw) ? $menuRaw : json_decode($menuRaw, true);
+        $decodedMenu = is_array($menuRaw) ? $menuRaw : json_decode($menuRaw, true);
+        if (is_array($decodedMenu)) {
+            foreach ($decodedMenu as $row) {
+                $rowData = [];
+                if (is_array($row)) {
+                    foreach ($row as $field) {
+                        if (isset($field['key']) && isset($field['value'])) {
+                            $rowData[$field['key']] = $field['value'];
+                        }
+                    }
+                }
+                if (!empty($rowData['title']) || !empty($rowData['anchor'])) {
+                    $menuItems[] = [
+                        'title'  => $rowData['title'] ?? '',
+                        'anchor' => $rowData['anchor'] ?? '',
+                    ];
+                }
+            }
+        }
     }
 
-    // Fallback menu nếu chưa cấu hình trong theme options
+    // Fallback menu nếu chưa cấu hình trong theme options hoặc cấu hình rỗng
     if (empty($menuItems)) {
         $menuItems = [
             ['title' => 'Tổng quan', 'anchor' => '#section-overview'],
