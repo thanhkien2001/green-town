@@ -5,9 +5,9 @@
     $img1Url = $img1Opt ? RvMedia::getImageUrl($img1Opt) : asset('themes/ripple/images/section10-1.png');
     if ($img1Opt == 'section10-1.png') $img1Url = asset('themes/ripple/images/section10-1.png');
 
-    $img2Opt = theme_option('ldp_s10_img_2');
+    <!-- $img2Opt = theme_option('ldp_s10_img_2');
     $img2Url = $img2Opt ? RvMedia::getImageUrl($img2Opt) : asset('themes/ripple/images/section10-2.png');
-    if ($img2Opt == 'section10-2.png') $img2Url = asset('themes/ripple/images/section10-2.png');
+    if ($img2Opt == 'section10-2.png') $img2Url = asset('themes/ripple/images/section10-2.png'); -->
 @endphp
 
 <style>
@@ -186,11 +186,11 @@
                         </div>
                     </div>
                     <!-- Slide 2 -->
-                    <div class="swiper-slide">
+                    <!-- <div class="swiper-slide">
                         <div class="s10-slide-img-wrap">
                             <img src="{{ $img2Url }}" alt="Phương thức thanh toán 2" />
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <!-- Pagination / Navigation (hidden per user request) -->
                 <!-- <div class="s10-swiper-pagination"></div> -->
