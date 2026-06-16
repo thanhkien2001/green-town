@@ -10,7 +10,7 @@
     if ($img2Opt == 'section10-2.png') $img2Url = asset('themes/ripple/images/section10-2.png');
 @endphp
 
-<section id="section10" class="kia-section-10">
+<section id="section-payment" class="kia-section-10">
     <!-- Leaf Decoration Top Right -->
     <div class="s10-leaf-bg js-reveal" style="transition-delay: 200ms;"></div>
 

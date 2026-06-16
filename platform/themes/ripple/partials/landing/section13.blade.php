@@ -11,7 +11,7 @@
     }
 @endphp
 
-<section id="section13" class="s13-wrap">
+<section id="section-contact" class="s13-wrap">
     <div class="s13-image-container">
         <!-- The background image that contains the design -->
         @if($bgImage)

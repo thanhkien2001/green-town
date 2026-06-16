@@ -7,6 +7,10 @@ let directory = path.basename(path.resolve(__dirname))
 const source = 'platform/themes/' + directory
 const dist = 'public/themes/' + directory
 
+mix.options({
+    processCssUrls: false
+});
+
 mix
     // purgeCSS is used to remove unused CSS, if you are not sure about it, you can change it to
     // .sass(source + '/assets/sass/style.scss', dist + '/css')

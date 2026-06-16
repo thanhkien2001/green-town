@@ -19,6 +19,9 @@
 <body @if (BaseHelper::isRtlEnabled()) dir="rtl" @endif>
 
 <div class="landing-page-wrapper">
+    <!-- HEADER MENU -->
+    {!! Theme::partial('landing.header') !!}
+
     <!-- SECTION 1: HERO BANNER -->
     {!! Theme::partial('landing.section1') !!}
 
