@@ -68,16 +68,16 @@ class PublicController extends Controller
                 $args = ['replyTo' => [$contact->name => $contact->email]];
             }
 
-            EmailHandler::setModule(CONTACT_MODULE_SCREEN_NAME)
-                ->setVariableValues([
-                    'contact_name' => $contact->name ?? 'N/A',
-                    'contact_subject' => $contact->subject ?? 'N/A',
-                    'contact_email' => $contact->email ?? 'N/A',
-                    'contact_phone' => $contact->phone ?? 'N/A',
-                    'contact_address' => $contact->address ?? 'N/A',
-                    'contact_content' => $contact->content ?? 'N/A',
-                ])
-                ->sendUsingTemplate('notice', null, $args);
+            // EmailHandler::setModule(CONTACT_MODULE_SCREEN_NAME)
+            //     ->setVariableValues([
+            //         'contact_name' => $contact->name ?? 'N/A',
+            //         'contact_subject' => $contact->subject ?? 'N/A',
+            //         'contact_email' => $contact->email ?? 'N/A',
+            //         'contact_phone' => $contact->phone ?? 'N/A',
+            //         'contact_address' => $contact->address ?? 'N/A',
+            //         'contact_content' => $contact->content ?? 'N/A',
+            //     ])
+            //     ->sendUsingTemplate('notice', null, $args);
 
             return $response->setMessage(__('Send message successfully!'));
         } catch (Exception $exception) {
