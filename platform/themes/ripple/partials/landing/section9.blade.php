@@ -1,10 +1,20 @@
 @php
     $bgImgOpt = theme_option('ldp_s9_bg');
+    $bgMobileOpt = theme_option('ldp_s9_bg_mobile');
     $kidImgOpt = theme_option('ldp_s9_kid_img');
 
     $bgImgUrl = $bgImgOpt ? RvMedia::getImageUrl($bgImgOpt) : asset('themes/ripple/images/section9_final.webp');
     // Fallback if user just typed the filename without path
     if ($bgImgOpt == 'section9_final.webp') $bgImgUrl = asset('themes/ripple/images/section9_final.webp');
+
+    $bgMobileUrl = $bgImgUrl;
+    if (!empty($bgMobileOpt) && $bgMobileOpt != '0' && $bgMobileOpt != 'null') {
+        if (filter_var($bgMobileOpt, FILTER_VALIDATE_URL) || str_starts_with($bgMobileOpt, '/') || str_contains($bgMobileOpt, 'storage/')) {
+            $bgMobileUrl = $bgMobileOpt;
+        } else {
+            $bgMobileUrl = RvMedia::getImageUrl($bgMobileOpt);
+        }
+    }
 
     $kidImgUrl = $kidImgOpt ? RvMedia::getImageUrl($kidImgOpt) : asset('themes/ripple/images/kid_section9.jpg');
     if ($kidImgOpt == 'kid_section9.jpg') $kidImgUrl = asset('themes/ripple/images/kid_section9.jpg');
@@ -14,7 +24,18 @@
     $btnLink = theme_option('ldp_s9_btn_link', '#');
 @endphp
 
-<section id="section9" class="kia-section-9" style="background-image: url('{{ $bgImgUrl }}');">
+<style>
+    .kia-section-9 {
+        background-image: url('{{ $bgImgUrl }}');
+    }
+    @media (max-width: 767px) {
+        .kia-section-9 {
+            background-image: url('{{ $bgMobileUrl }}');
+        }
+    }
+</style>
+
+<section id="section9" class="kia-section-9">
     <div class="s9-container">
         
         <!-- Left Block -->

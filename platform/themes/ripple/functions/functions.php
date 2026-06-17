@@ -878,6 +878,15 @@ theme_option()
                 ],
             ],
             [
+                'id'         => 'ldp_s9_bg_mobile',
+                'type'       => 'mediaImage',
+                'label'      => 'Hình nền chính (Mobile)',
+                'attributes' => [
+                    'name'  => 'ldp_s9_bg_mobile',
+                    'value' => null,
+                ],
+            ],
+            [
                 'id'         => 'ldp_s9_heading',
                 'type'       => 'textarea',
                 'label'      => 'Tiêu đề (Có thể dùng Enter để xuống dòng)',
