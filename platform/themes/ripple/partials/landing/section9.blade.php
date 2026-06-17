@@ -41,7 +41,7 @@
         <!-- Left Block -->
         <div class="s9-left-block js-reveal">
             <h2 class="s9-heading font-selecta-bold js-reveal" style="transition-delay: 400ms;">{!! nl2br(e($heading)) !!}</h2>
-            <a href="{{ $btnLink }}" class="s9-btn font-selecta-bold js-reveal" style="transition-delay: 700ms; display: inline-block;">
+            <a href="#" onclick="openS10Popup(event)" class="s9-btn font-selecta-bold js-reveal" style="transition-delay: 700ms; display: inline-block;">
                 {{ $btnText }}
             </a>
         </div>
