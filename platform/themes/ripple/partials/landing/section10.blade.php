@@ -255,6 +255,9 @@
                     headers: { 'Accept': 'application/json' }
                 })
                 .then(function (response) {
+                    if (response.status === 429) {
+                        return { success: false, message: 'Bạn đang gửi quá nhiều yêu cầu. Vui lòng thử lại sau 1 phút!' };
+                    }
                     return response.json().then(function (data) {
                         if (response.ok && !data.error) {
                             return { success: true, message: 'Đăng ký nhận thông tin thành công! Chúng tôi sẽ liên hệ sớm nhất.' };

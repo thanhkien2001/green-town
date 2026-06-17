@@ -19,6 +19,9 @@ export default function initSection13Form() {
             }
         })
         .then(function (response) {
+            if (response.status === 429) {
+                return { success: false, message: 'Bạn đang gửi quá nhiều yêu cầu. Vui lòng thử lại sau 1 phút!' };
+            }
             return response.json().then(function (data) {
                 if (response.ok && !data.error) {
                     // Override the default English message with our custom Vietnamese message

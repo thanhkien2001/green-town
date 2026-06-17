@@ -26,6 +26,7 @@ Route::group(['namespace' => 'Botble\Contact\Http\Controllers', 'middleware' => 
         Route::post('contact/send', [
             'as' => 'public.send.contact',
             'uses' => 'PublicController@postSendContact',
+            'middleware' => 'throttle:3,1',
         ]);
     });
 });
