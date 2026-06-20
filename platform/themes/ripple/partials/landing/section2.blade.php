@@ -39,7 +39,7 @@
     // Nếu không có dữ liệu (hoặc sau khi lọc bị trống) thì dùng fallback mặc định
     if (empty($col1Items)) {
         $col1Items = [
-            ['label' => 'Địa chỉ dự án', 'value' => 'B2, Lô 5, khu đô thị Vĩnh Lộc,<br /> phường Bình Tân, TP. Hồ Chí Minh'],
+            ['label' => 'Địa chỉ dự án', 'value' => 'B1, Lô 5, khu đô thị Vĩnh Lộc,<br /> phường Bình Tân, TP. Hồ Chí Minh'],
             ['label' => 'Chiều cao', 'value' => '16 tầng'],
             ['label' => 'Tổng số căn', 'value' => '252 căn hộ, 5 căn shophouse'],
             ['label' => 'Diện tích căn hộ', 'value' => ''],
