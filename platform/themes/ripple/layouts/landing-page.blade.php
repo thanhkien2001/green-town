@@ -43,6 +43,14 @@
     src="https://www.facebook.com/tr?id=2153605741856694&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Meta Pixel Code -->
+
+    <!-- Admicro Tag Manager -->
+    <script> (function(a, b, d, c, e) { a[c] = a[c] || [];
+    a[c].push({ "atm.start": (new Date).getTime(), event: "atm.js" });
+    a = b.getElementsByTagName(d)[0]; b = b.createElement(d); b.async = !0;
+    b.src = "//deqik.com/tag/corejs/" + e + ".js"; a.parentNode.insertBefore(b, a)
+    })(window, document, "script", "atmDataLayer", "ATMCJWE3D3JPP");</script>
+    <!-- End Admicro Tag Manager -->
 </head>
 <body @if (BaseHelper::isRtlEnabled()) dir="rtl" @endif>
 
